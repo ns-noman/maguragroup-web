@@ -1,0 +1,586 @@
+@font-face {
+    font-family: Lato Light;
+    src: url('../assets/font/Lato-Lig.ttf');
+}
+
+@font-face {
+    font-family: Lato;
+    src: url('../assets/font/Lato-Reg.ttf');
+}
+
+@font-face {
+    font-family: Siyam Rupali;
+    src: url('../assets/font/Siyamrupali.ttf');
+}
+
+/* body {
+    color: #333333;
+    font: 15px/22.5px "Lato Light", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+    background: #fcfcfc;
+    margin: 0px;
+    padding: 0px;
+    background: #fff;
+} */
+
+.bangla {
+    /*font-family: Siyam Rupali ANSI;*/
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato", "Lato Light", "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+    font-weight: 700;
+} */
+
+dl,
+menu,
+ol,
+ul {
+    margin: 0 0 1em;
+    padding: 0;
+}
+
+.row:after {
+    clear: both;
+}
+
+.row:before,
+.row:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.row:before,
+.row:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.align-center {
+    display: block;
+    margin: 0 auto;
+}
+
+.row {
+    margin: 0 auto;
+    max-width: 100%;
+    min-width: 768px;
+    width: 1300px;
+}
+
+.column,
+.columns {
+    float: left;
+    min-height: 1px;
+    padding: 0 10px;
+    position: relative;
+}
+
+.twelve,
+.row .twelve {
+    width: 1275px;
+}
+
+#container {
+    background: none repeat scroll 0 0 #fff;
+    border-top: 1px solid #B24926;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#content-wrapper {
+    background-color: #FFFFFF;
+
+    border: 1px solid #333333;
+    padding: 15px 0;
+    position: relative;
+}
+
+#content {
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0 4px #000000;
+    float: right;
+    padding: 25px 5px;
+    width: 1165px;
+    min-height: 500px;
+}
+
+#content.logdding,
+.form-element-submit.logdding {
+    background: url(img/ajax-loader.gif) center 6px no-repeat;
+}
+
+#content>div {
+    margin: 0 auto;
+}
+
+#page_title {
+    clear: both;
+    padding-left: 0px;
+}
+
+.icon-32 span {
+    display: block;
+    width: 34px;
+    height: 34px;
+    background-image: url(img/icons32.png);
+    background-position: -540px, 0px;
+    background-repeat: no-repeat;
+    float: left;
+}
+
+#page_title h1 {
+    font-size: 24px;
+    color: #999;
+    float: left;
+    line-height: 34px;
+    margin: 0px;
+    padding: 0px 0px 0px 10px;
+}
+
+#sidebar {
+    border-left: 0 none;
+    border-right: 0px solid #E7E7E7;
+    box-shadow: 15px 0 5px -16px #E7E7E7 inset;
+    float: left;
+    margin: -20px 0 0 -6px;
+    position: relative;
+    padding: 0;
+    width: 100px;
+}
+
+#accordion-nav {
+    width: 100px;
+    float: left;
+
+}
+
+#accordion-nav>ul {
+    padding: 5px;
+    margin: 0x 5px;
+}
+
+#accordion-nav .widget {
+    position: relative;
+}
+
+#sidebar h3 {
+    background-image: linear-gradient(to right, #EFEFEF, #F3F3F3);
+    margin-left: 0;
+    margin-right: 0;
+    padding: 12px 20px;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+
+#sidebar li {
+    line-height: 15px;
+    list-style-type: none;
+    padding-left: 20px;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+
+#sidebar li a {
+    color: #4D4D4D;
+    display: block;
+    padding: 8px 0;
+    text-decoration: none;
+}
+
+#sidebar li a:hover {
+    color: #0769AD;
+}
+
+#sidebar li a.active {
+    color: #000;
+}
+
+#page-holder {
+    width: 650px;
+    height: 976px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 1px solid #666;
+    position: relative;
+    overflow: hidden;
+}
+
+#page-holder .nblock {
+    position: absolute;
+    border: 1px solid #060;
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 6, 0, .5);
+}
+
+.ui-resizable-ghost {
+    border: 1px dotted red;
+}
+
+#dialog-form-addnews {}
+
+#dialog-form-addnews label,
+#dialog-form-addnews input {
+    display: block;
+}
+
+#dialog-form-addnews input.text {
+    margin-bottom: 12px;
+    width: 95%;
+    padding: .4em;
+}
+
+#dialog-form-addnews fieldset {
+    padding: 0;
+    border: 0;
+    margin-top: 25px;
+}
+
+#dialog-form-addnews h1 {
+    font-size: 1.2em;
+    margin: .6em 0;
+}
+
+#ajax-container {
+    padding: 0px;
+}
+
+.page-enty {
+    padding: 20px 5px;
+}
+
+.form-element {
+    margin: 15px 0px;
+}
+
+.form-element-submit {
+    border-top: 1px solid #999;
+    text-align: right;
+    padding: 10px;
+}
+
+.form-element label {
+    display: block;
+    float: left;
+    font-family: "Lato";
+    font-size: 16px;
+    line-height: 33px;
+    min-width: 120px;
+    padding-right: 3px;
+    text-align: right;
+}
+
+.form-element input[type="text"],
+.form-element input[type="file"],
+.form-element select {
+    border: 1px solid #999999;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 2px #CCCCCC inset;
+    font-size: 16px;
+    padding: 5px 8px;
+}
+
+.form-element .submit_button {
+    border: 1px solid #999999;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 2px #CCCCCC inset;
+    padding: 5px 12px;
+    background: #EEE
+}
+
+.form-element .submit_button:hover {
+    cursor: pointer;
+    background: #DDDDDD
+}
+
+.form-element .wsmall {
+    width: 120px;
+}
+
+.form-element .wmideam {
+    width: 220px;
+}
+
+.form-element .wlarg {
+    width: 420px;
+}
+
+#enfile_upload {
+    float: left;
+    margin-right: 20px;
+}
+
+#button-upload-image {
+    border: 2px solid #999999;
+    border-radius: 20px 20px 20px 20px;
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 6px;
+    text-transform: uppercase;
+    background-image: linear-gradient(to right, #EFEFEF, #F3F3F3);
+
+}
+
+#button-upload-image:hover {
+    border: 2px solid #666;
+}
+
+.form-element .uploadify-queue {
+    float: left;
+}
+
+.form-element .uploadify-queue .uploadify-queue-item {
+    clear: right;
+    float: left;
+    margin-bottom: 1em;
+    margin-right: 14px;
+    width: 280px;
+    clear: both;
+}
+
+.uploadify-queue .tempimg {
+    float: left;
+    clear: both;
+}
+
+/*CUSTOM UI*/
+#accordion-nav .ui-accordion-header-icon {
+    right: 0.5em;
+    left: auto;
+}
+
+#accordion-nav .ui-accordion-content {
+    padding: inherit;
+}
+
+#status {
+    background: url("img/color_blue.png") repeat-x scroll center center transparent;
+    border-color: #FFFFFF;
+    border-radius: 0 0 10px 10px;
+    border-style: solid;
+    border-width: 0 1px 1px;
+    box-shadow: 2px 3px 5px #000000;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    left: 15px;
+    padding: 10px;
+    position: fixed;
+    right: 15px;
+    text-align: center;
+    top: 0;
+    z-index: 99999;
+    display: none;
+}
+
+#status.success {
+    background: url(img/color_blue.png) center center repeat-x;
+}
+
+#status.error {
+    background: url(img/color_red.png) center center repeat-x;
+}
+
+##status.alert {
+    background: url(img/color_magenta.png) center center repeat-x;
+}
+
+ul.form-el-container li {
+    display: inline-block;
+}
+
+#get_page_form {
+    text-align: center;
+}
+
+#reguler-epage,
+#reguler-epage-parent {
+    background-color: #FFFFFF;
+    background-position: left top;
+    background-repeat: no-repeat;
+    border: 1px solid;
+    box-shadow: 0 0 3px #000;
+    height: 1550px;
+    margin: 0 auto;
+    text-align: center;
+    width: 897px;
+    position: relative;
+    overflow: hidden;
+}
+
+#reguler-epage-parent a {
+    position: absolute;
+    display: block;
+    border: 1px dashed #060;
+    opacity: 0.6;
+}
+
+#reguler-epage-parent a.news-box:hover {
+    border: 1px dashed #f00;
+    opacity: 1;
+}
+
+#news-addbutton {
+    background-color: #f4f4f4;
+    border-radius: 10px 0 0 10px;
+    padding: 15px;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    box-shadow: 0 0 3px #FDD3A3;
+    width: 60px;  /* Adjust width */
+    height: 60px; /* Adjust height */
+    display: none;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;  /* Center content vertically */
+}
+
+#news-addbutton.lodding {
+    background: #f4f4f4 url(img/uploder.gif) center center no-repeat;
+}
+
+#news-addbutton a {
+    display: block;
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFFFFF;
+    width: 40px;  /* Increased size for the icon */
+    height: 40px; /* Increased size for the icon */
+    background-image: url(img/crop.png);
+    background-size: contain;  /* Ensure the icon scales to fit the anchor */
+    background-position: center;  /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+#news-addbutton a:hover {
+    background-position: center;
+    background-size: contain;  /* Keep the icon size the same on hover */
+}
+
+.cnewsblock {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.4);
+    border: 2px dashed #FF0000;
+    height: 150px;
+    min-height: 30px;
+    min-width: 45px;
+    width: 100px;
+}
+
+.cnewsblock.ui_enable {
+    cursor: move;
+}
+
+.cnewsblock.ui-state-disabled {
+    border: 2px solid #060;
+    background: rgba(0, 6, 0, .6);
+    opacity: 1 !important;
+}
+
+.cnewsblock ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.cnewsblock a {
+    background: none repeat scroll 0 0 #CCCCCC;
+    border: 1px solid #FFFFFF;
+    color: #333333;
+    display: block;
+    font-size: 10px;
+    margin: 4px auto;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 45px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.cnewsblock a:hover {
+    color: #FF00000;
+}
+
+.cnewsblock a.nlink {
+    visibility: hidden;
+}
+
+.cnewsblock a.nremove {
+    visibility: hidden;
+}
+
+.cnewsblock.ui-state-disabled a.nsave {
+    visibility: hidden;
+}
+
+.cnewsblock.ui-state-disabled a.nlink {
+    visibility: visible;
+}
+
+.cnewsblock.ui-state-disabled a.nremove {
+    visibility: visible;
+}
+
+.cnewsblock a.activated {
+    visibility: visible;
+    background: #060;
+    border-color: #ccc;
+}
+
+.widget.user {
+    clear: both;
+    padding: 20px;
+    text-align: center;
+}
+
+#page_title.lodding {
+    background: url("img/ajax-loader.gif") no-repeat scroll center center transparent
+}
+
+span.link {
+    font-size: 12px;
+    float: right;
+}
+
+table.datalist {
+    width: 100%;
+}
+
+table.datalist tbody tr:hover td {
+    background-color: #FFF;
+}
+
+.nremove
