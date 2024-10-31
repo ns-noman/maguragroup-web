@@ -20,8 +20,9 @@ class BasicInfoController extends Controller
 
     public function edit($id)
     {
-        $basicInfo = BasicInfo::find($id);
-        return view('backend.basic-infos.edit', compact('basicInfo'));
+        $data['basicInfo'] = BasicInfo::find($id);
+        $data['breadcrumb'] = $this->breadcrumb;
+        return view('backend.basic-infos.edit', compact('data'));
     }
 
     public function update(Request $request, $id)

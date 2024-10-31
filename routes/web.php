@@ -30,6 +30,7 @@ Route::prefix('backend')->group(function () {
                 Route::put('update/{id}','update')->name('menus.update');
                 Route::delete('delete/{id}','destroy')->name('menus.destroy');
             });
+
             Route::prefix('frontend-menus')->controller(FrontendMenuController::class)->group(function(){
                 Route::get('','index')->name('frontend-menus.index');
                 Route::get('create','createOrEdit')->name('frontend-menus.create');
@@ -38,16 +39,56 @@ Route::prefix('backend')->group(function () {
                 Route::put('update/{id}','update')->name('frontend-menus.update');
                 Route::delete('delete/{id}','destroy')->name('frontend-menus.destroy');
             });
-            
-            // Route::prefix('backend-menus')->controller(MenuController::class)->group(function(){
-            //     Route::get('','index')->name('backend-menus.index');
-            //     Route::get('create','createOrEdit')->name('backend-menus.create');
-            //     Route::get('edit/{id?}/{addmenu?}','createOrEdit')->name('backend-menus.edit');
-            //     Route::post('store','store')->name('backend-menus.store'); 
-            //     Route::put('update/{id}','update')->name('backend-menus.update');
-            //     Route::delete('delete/{id}','destroy')->name('backend-menus.destroy');
-            // });
 
+            Route::prefix('sliders')->controller(SliderController::class)->group(function(){
+                Route::get('','index')->name('sliders.index');
+                Route::get('create','createOrEdit')->name('sliders.create');
+                Route::get('edit/{id?}','createOrEdit')->name('sliders.edit');
+                Route::post('store','store')->name('sliders.store');
+                Route::put('update/{id}','update')->name('sliders.update');
+                Route::delete('delete/{id}','destroy')->name('sliders.destroy');
+                Route::get('sliders','sliders')->name('sliders.sliders');
+            });
+            Route::prefix('galleries')->controller(GalleryController::class)->group(function(){
+                Route::get('','index')->name('galleries.index');
+                Route::get('create','createOrEdit')->name('galleries.create');
+                Route::get('edit/{id?}','createOrEdit')->name('galleries.edit');
+                Route::post('store','store')->name('galleries.store');
+                Route::put('update/{id}','update')->name('galleries.update');
+                Route::delete('delete/{id}','destroy')->name('galleries.destroy');
+                Route::get('galleries','galleries')->name('galleries.galleries');
+            });
+            
+            Route::prefix('service-types')->controller(ServiceTypeController::class)->group(function(){
+                Route::get('','index')->name('service-types.index');
+                Route::get('create','createOrEdit')->name('service-types.create');
+                Route::get('edit/{id?}','createOrEdit')->name('service-types.edit');
+                Route::post('store','store')->name('service-types.store');
+                Route::put('update/{id}','update')->name('service-types.update');
+                Route::delete('delete/{id}','destroy')->name('service-types.destroy');
+                Route::get('service-types','serviceTypes')->name('service-types.serviceTypes');
+            });
+            
+            Route::prefix('services')->controller(ServiceController::class)->group(function(){
+                Route::get('','index')->name('services.index');
+                Route::get('create','createOrEdit')->name('services.create');
+                Route::get('edit/{id?}','createOrEdit')->name('services.edit');
+                Route::post('store','store')->name('services.store');
+                Route::put('update/{id}','update')->name('services.update');
+                Route::delete('delete/{id}','destroy')->name('services.destroy');
+                Route::get('services','services')->name('services.services');
+            });
+            
+            Route::prefix('products')->controller(ProductController::class)->group(function(){
+                Route::get('','index')->name('products.index');
+                Route::get('create','createOrEdit')->name('products.create');
+                Route::get('edit/{id?}','createOrEdit')->name('products.edit');
+                Route::post('store','store')->name('products.store');
+                Route::put('update/{id}','update')->name('products.update');
+                Route::delete('delete/{id}','destroy')->name('products.destroy');
+                Route::get('products','products')->name('products.products');
+            });
+            
 
             Route::prefix('logout')->controller(AdminController::class)->group(function(){
                 Route::post('', 'logout')->name('admin.logout');
