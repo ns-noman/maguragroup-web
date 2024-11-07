@@ -135,7 +135,6 @@
 						<div class="icon">
 							<i class="fas fa-dollar-sign"></i>
 						</div>
-                        {{-- 'assets_value','total_employees','total_companies','start_year','map_embed','video_embed_1','video_embed_2','video_embed_3' --}}
 						<div class="content">
 							<div class="title">
 								<h2 class="counter">{{ number_format($data['basicInfo']['assets_value'], $decimals = 0, $dec_point = ".", $thousands_sep = ",") }}</h2>
@@ -216,7 +215,7 @@
                             <div class="content">
                                 <h2><a href="services-details.html">{{ $serviceType['title'] }}</a></h2>
                                 <p style="height: 120px;">{{ $serviceType['description'] }}</p>
-                                <a class="get_link" href="services-details.html">Get Now <i class="bi bi-arrow-right"></i></a>
+                                <a class="get_link" href="services-details.html">View Details <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -359,13 +358,9 @@
 	</section>
 	<!-- End Category Area -->
 
-
-
-
 	<!-- Start Blog Area -->
 	<section class="section-padding-2">
 		<div class="container">
-			<!-- Section Headding -->
 			<div class="row">
 				<div class="col-lg-12 mb-50 text-center">
 					<div class="section-headding">
@@ -375,121 +370,50 @@
 				</div>
 			</div>
 			<div class="row">
-				<!-- single -->
-				<div class="col-lg-4 col-md-6 mb-30">
-					<div class="blog-item">
-						<div class="thumnail">
-							<a href="single.html">
-								<img src="assets/img/blog/1.jpg" alt="blog">
-							</a>
-						</div>
-						<div class="content">
-							<div class="post-date">
-								<span>31</span>
-								Oct
+				@foreach ($data['blogs'] as $blog)
+					<div class="col-lg-4 col-md-6 mb-30">
+						<div class="blog-item">
+							<div class="thumnail">
+								<a href="single.html">
+									<img style="width: 387px; height: 259px" src="{{ asset("public/uploads/blogs/". $blog['image']) }}" alt="{{ $blog['alt'] }}">
+								</a>
 							</div>
-							<div class="blog-meta">
-								<a href="#"><i class="fas fa-user"></i> Admin</a>
-								<a href="#"><i class="fas fa-tags"></i> Technology</a>
+							<div class="content">
+								@php
+									$date = \Carbon\Carbon::parse($blog['created_at']);
+									$day = $date->day;
+									$month = $date->format('M');
+									$year = $date->year;
+								@endphp
+								<div class="post-date">
+									<span>{{ $day }}</span>
+									{{ $month }}, {{ $year }}
+								</div>
+								<div class="blog-meta">
+									<a href="#"><i class="fas fa-user"></i> {{ $blog['admin']['name'] }}</a>
+									<a href="#"><i class="fas fa-tags"></i> {{ $blog['blogcategory']['title'] }}</a>
+								</div>
+								<h3><a href="single.html">{{ $blog['title'] }}</a></h3>
+								<p>{{ $blog['short_description'] }}</p>
 							</div>
-							<h3><a href="single.html">Five Ways to Develop a World Class Sales Operations</a></h3>
-							<p>Nulla ac suscipit nisi. Sed rhoncus, nisl ut rutrum maximus, justo dui malesuada magna,
-								non eleifend</p>
-						</div>
-					</div>
-				</div>
-				<!-- single -->
-				<div class="col-lg-4 col-md-6 mb-30">
-					<div class="blog-item">
-						<div class="thumnail">
-							<a href="single.html">
-								<img src="assets/img/blog/2.jpg" alt="blog">
-							</a>
-						</div>
-						<div class="content">
-							<div class="post-date">
-								<span>31</span>
-								Oct
-							</div>
-							<div class="blog-meta">
-								<a href="#"><i class="fas fa-user"></i> Admin</a>
-								<a href="#"><i class="fas fa-tags"></i> Technology</a>
-							</div>
-							<h3><a href="single.html">Five Ways to Develop a World Class Sales Operations</a></h3>
-							<p>Nulla ac suscipit nisi. Sed rhoncus, nisl ut rutrum maximus, justo dui malesuada magna,
-								non eleifend</p>
 						</div>
 					</div>
-				</div>
-				<!-- single -->
-				<div class="col-lg-4 col-md-6 mb-30">
-					<div class="blog-item">
-						<div class="thumnail">
-							<a href="single.html">
-								<img src="assets/img/blog/3.jpg" alt="blog">
-							</a>
-						</div>
-						<div class="content">
-							<div class="post-date">
-								<span>31</span>
-								Oct
-							</div>
-							<div class="blog-meta">
-								<a href="#"><i class="fas fa-user"></i> Admin</a>
-								<a href="#"><i class="fas fa-tags"></i> Technology</a>
-							</div>
-							<h3><a href="single.html">Five Ways to Develop a World Class Sales Operations</a></h3>
-							<p>Nulla ac suscipit nisi. Sed rhoncus, nisl ut rutrum maximus, justo dui malesuada magna,
-								non eleifend</p>
-						</div>
-					</div>
-				</div>
+				@endforeach
 			</div>
 		</div>
 	</section>
 	<!-- End Blog Area -->
 
-
-
 	<!-- Start Instagram Feed -->
 	<div class="ins-feed">
 		<div class="instagram-feed owl-carousel">
-			<!-- single -->
-			<div class="ins-single">
-				<a data-rel="lightcase:myCollection:instagram" href="assets/img/gallaries/1.jpg">
-					<img src="assets/img/gallaries/1.jpg" alt="img">
-				</a>
-			</div>
-			<!-- single -->
-			<div class="ins-single">
-				<a data-rel="lightcase:myCollection:instagram" href="assets/img/gallaries/2.jpg">
-					<img src="assets/img/gallaries/2.jpg" alt="img">
-				</a>
-			</div>
-			<!-- single -->
-			<div class="ins-single">
-				<a data-rel="lightcase:myCollection:instagram" href="assets/img/gallaries/3.jpg">
-					<img src="assets/img/gallaries/3.jpg" alt="img">
-				</a>
-			</div>
-			<!-- single -->
-			<div class="ins-single">
-				<a data-rel="lightcase:myCollection:instagram" href="assets/img/gallaries/4.jpg">
-					<img src="assets/img/gallaries/4.jpg" alt="img">
-				</a>
-			</div>
-			<!-- single -->
-			<div class="ins-single">
-				<a data-rel="lightcase:myCollection:instagram" href="assets/img/gallaries/5.jpg">
-					<img src="assets/img/gallaries/5.jpg" alt="img">
-				</a>
-			</div>
-			<!-- single -->
-			<div class="ins-single">
-				<a data-rel="lightcase:myCollection:instagram" href="assets/img/gallaries/6.jpg">
-					<img src="assets/img/gallaries/6.jpg" alt="img">
-				</a>
-			</div>
+			@foreach ($data['galleris'] as $gallery)
+				<div class="ins-single">
+					<a data-rel="lightcase:myCollection:instagram" style="width: 380px; height: 380px;" href="{{ asset("public/uploads/galleries/". $gallery['image']) }}">
+						<img style="width: 380px; height: 380px;" src="{{ asset("public/uploads/galleries/". $gallery['image']) }}" alt="{{ $gallery['alt'] }}">
+					</a>
+				</div>
+			@endforeach
 		</div>
 	</div>
 	<!-- End Instagram Feed -->

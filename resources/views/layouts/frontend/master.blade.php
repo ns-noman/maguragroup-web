@@ -2,6 +2,20 @@
     $basicInfo = Cache::remember('basic_info', 60, function () {
         return \App\Models\BasicInfo::first();
     });
+    
+// 'parent_id',
+//         'srln',
+//         'title',
+//         'slug',
+//         'is_in_menus',
+//         'is_in_pages',
+//         'status',
+//         'created_by_id',
+//         'updated_by_id',
+$frontendmenus = \App\Models\FrontendMenu::with('frontendsubmenus.frontendsubmenus')->where(['parent_id'=>0 ,'is_in_menus'=>1, 'status'=>1])->select(['id', 'parent_id', 'title', 'slug'])->orderBy('srln')->get()->toArray();
+
+
+$pages = \App\Models\FrontendMenu::where(['is_in_pages'=>1, 'status'=>1])->select(['title', 'slug'])->orderBy('srln')->get()->toArray();
 @endphp
 <!DOCTYPE html>
 <html class="no-js" lang="en">

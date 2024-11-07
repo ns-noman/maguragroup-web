@@ -40,6 +40,10 @@ class FrontendMenu extends Model
             $model->slug = Str::slug($model->title);
             $model->updated_by_id = Auth::guard('admin')->user()->id;
         });
+        static::updated(function ($model) {
+            $model->slug = Str::slug($model->title . '-' . $model->id);
+            $model->saveQuietly();
+        });
     }
 
 
@@ -50,5 +54,10 @@ class FrontendMenu extends Model
     public function children_create()
     {
         return $this->hasMany(FrontendMenu::class, 'parent_id')->where('status',1)->orderBy('srln','asc');
+    }
+    
+    public function frontendsubmenus()
+    {
+        return $this->hasMany(FrontendMenu::class, 'parent_id')->where(['is_in_menus'=>1, 'status'=>1])->select(['id', 'parent_id', 'title', 'slug'])->orderBy('srln');
     }
 }

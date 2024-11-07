@@ -1,0 +1,113 @@
+@extends('layouts.frontend.master')
+@section('content')
+	@include('layouts.frontend.breadcrumb')
+	<section class="contact-area section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 align-self-center">
+					<div class="contact-form">
+						<h2>Get In Touch</h2>
+						<form id="contact-form" action="https://www.preetheme.com/html/bhouse/mail.php" method="POST">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="single-input">
+										<input required="required" type="text" name="name" placeholder="Your Name">
+										<i class="fas fa-user"></i>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="single-input">
+										<input required="required" type="email" name="email" placeholder="Your Email">
+										<i class="far fa-envelope"></i>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="single-input">
+										<input type="text" required="required" name="phone" placeholder="Your Phone">
+										<i class="fas fa-mobile-alt"></i>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="single-input">
+										<input type="text" required="required" name="subject" placeholder="Your Subjects">
+										<i class="fas fa-file-alt"></i>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="single-input">
+										<textarea name="message" required="required" placeholder="Write Message" spellcheck="false"></textarea>
+										<i class="fas fa-pen"></i>
+									</div>
+								</div>
+								<div class="col-12">
+									<button type="submit">Send Message</button>
+								</div>
+							</div>
+						</form>
+						<p class="ajax-response"></p>
+					</div>
+				</div>
+				<div class="col-lg-4 align-self-center">
+					<div class="contact-form-info" style="background-image:url('{{ asset("public/frontend-assets/img/contact.jpg") }}');">
+						<h2>Don't hesitate to contact us</h2>
+						<div class="contact-info-list">
+							<div class="item mb-20">
+								<div class="icon">
+									<i class="fas fa-home"></i>
+								</div>
+								<div class="content">
+									<h4>Locations</h4>
+									<p>{{ $data['basicInfo']['address'] }}</p>
+								</div>
+							</div>
+							<div class="item mb-20">
+								<div class="icon">
+									<i class="far fa-envelope"></i>
+								</div>
+								<div class="content">
+									<h4>Drop A Mail</h4>
+									<p>{{ $data['basicInfo']['email'] }}</p>
+								</div>
+							</div>
+							<div class="item">
+								<div class="icon">
+									<i class="fas fa-mobile-alt"></i>
+								</div>
+								<div class="content">
+									<h4>Call Us</h4>
+									<p>{{ $data['basicInfo']['fax'] }}</p>
+									<p>{{ $data['basicInfo']['phone'] }}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<style>
+				.map-container {
+					position: relative;
+					width: 100%;
+					/* Maintain aspect ratio */
+					padding-bottom: 50%; /* 50% height relative to width */
+					height: 0;
+					overflow: hidden;
+				}
+				.map-container iframe {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					border: 0;
+				}
+			</style>
+			<div class="row mt-5">
+				<div class="col-lg-12 align-self-center">
+					<div class="map-container">
+						<iframe class="border-secondary border-3" src="{{ $data['basicInfo']['map_embed'] }}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+@endsection

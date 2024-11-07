@@ -1,10 +1,10 @@
 <!-- Preloader -->
-<div id="preloader">
+{{-- <div id="preloader">
     <div class="preloader">
         <span></span>
         <span></span>
     </div>
-</div>
+</div> --}}
 
  
 <!-- Header Top -->
@@ -16,19 +16,19 @@
                 <!-- Top Left -->
                 <div class="col-lg-8">
                     <div class="hl_top-left">
-                        <a href="tel:+8801847091084" style="text-decoration: none; color: inherit; cursor: pointer;"><span><i class="bi bi-telephone"></i> +88 01847-091084</span></a>&nbsp;						
-                        <a style="text-decoration: none; color: inherit; cursor: pointer;" href="mailto:info@maguragroup.com.bd"><span><i class="bi bi-envelope"></i> info@maguragroup.com.bd</span></a>&nbsp;
-                        <a href="https://maps.app.goo.gl/Vu4ChwYeLNPrywR48" target="_blank" style="text-decoration: none; color: inherit; cursor: pointer;"><span><i class="bi bi-geo-alt"></i> Bashundhara Avenue Road, Dhaka-1229</span></a>
+                        <a href="tel:+8801847091084" style="text-decoration: none; color: inherit; cursor: pointer;"><span><i class="bi bi-telephone"></i> {{ $basicInfo->phone }}</span></a>&nbsp;						
+                        <a style="text-decoration: none; color: inherit; cursor: pointer;" href="mailto:{{ $basicInfo->email }}"><span><i class="bi bi-envelope"></i> {{ $basicInfo->email }}</span></a>&nbsp;
+                        <a href="https://maps.app.goo.gl/Vu4ChwYeLNPrywR48" target="_blank" style="text-decoration: none; color: inherit; cursor: pointer;"><span><i class="bi bi-geo-alt"></i> {{ $basicInfo->location }}</span></a>
                     </div>
                 </div>
                 <!-- Top Right -->
                 <div class="col-lg-4">
                     <!-- Social -->
                     <div class="top-social">
-                        <span><a target="_blank" href="https://www.facebook.com/magura.group.mg"><i class="fab fa-facebook-f"></i></a></span>
-                        <span><a target="_blank" href="https://twitter.com/GroupMagura?lang=en"><i class="fab fa-twitter"></i></a></span>
-                        <span><a target="_blank" href="https://plus.google.com/u/0/107586166652443293337"><i class="fab fa-google"></i></a></span>
-                        <span><a target="_blank" href="https://www.youtube.com/channel/UCheM1ziE-laJUnfxVoaYu0g"><i class="fab fa-youtube"></i></a></span>
+                        <span><a target="_blank" href="{{ $basicInfo->facebook_link }}"><i class="fab fa-facebook-f"></i></a></span>
+                        <span><a target="_blank" href="{{ $basicInfo->twitter_link }}"><i class="fab fa-twitter"></i></a></span>
+                        <span><a target="_blank" href="{{ $basicInfo->linkedin_link }}"><i class="fab fa-linkedin"></i></a></span>
+                        <span><a target="_blank" href="{{ $basicInfo->youtube_link }}"><i class="fab fa-youtube"></i></a></span>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
             <div class="row">
                 <div class="col-lg-2 col-md-4 align-self-center">
                     <div class="logo py-1">
-                        <a href="index.html">
+                        <a href="{{ route('home.index') }}">
                             <img height="70px" src="{{ asset('public/uploads/basic-info/'.$basicInfo->logo) }}" alt="logo">
                         </a>
                     </div>
@@ -77,7 +77,49 @@
                     <div class="menu">
                         <nav>
                             <ul>
-                                <li>
+
+
+                                @php
+                                    
+
+                                    if(!function_exists('makemenu'))
+                                    {
+                                        function makemenu($frontendmenus)
+                                        {
+                                            $output = '';
+                                            foreach ($frontendmenus as $key => $menu) {
+
+
+                                                $hasChildMenu = $menu['frontendsubmenus'] ? true : false;
+                                                $plusIcon = $hasChildMenu ? 'menu-item-has-children' : '';
+                                                $route = !$hasChildMenu ? $menu['slug'] : 'javascript:void(0)';
+                                                $title = $menu['title'];
+                                                $active = request()->path() == $menu['slug'] ? 'active' : '';
+
+
+                                                $output .= "<li class='$plusIcon'>";
+                                                $output .=     "<a class='$active' href='$route' >$title</a>";
+                                                if($hasChildMenu)
+                                                {
+                                                    $output .= "<ul>";
+                                                    $output .=      makemenu($menu['frontendsubmenus']);
+                                                    $output .= "</ul>";
+                                                    
+                                                }
+                                                $output .= "</li>";
+
+
+
+                                            }
+                                            return $output;
+                                        }
+                                    }
+
+                                @endphp
+
+                                {!! makemenu($frontendmenus) !!}
+
+                                {{-- <li>
                                     <a class="active" href="index.html" >Home</a>
                                 </li>
                                 <li class="menu-item-has-children active"><a href="about.html">About Us</a>
@@ -91,7 +133,7 @@
                                 <li><a href="companies.html">Companies</a></li>
                                 <li><a href="chairman-speech.html">Chairman Speech</a></li>
                                 <li><a href="blog-grid.html">Blogs</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li> --}}
                             </ul>
                         </nav>
                     </div>

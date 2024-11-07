@@ -9,15 +9,11 @@
                     <div class="f-widgets-single">
                         <!-- Logo -->
                         <div class="flogo mb-20 py-2">
-                            <a href="index.html">
-                                <img src="assets/img/basic/logo.png" alt="logo">
+                            <a href="{{ route('home.index') }}">
+                                <img src="{{ asset('public/uploads/basic-info/'.$basicInfo->logo) }}" alt="Magura Group">
                             </a>
-                        </div>
-                        <p><i class="fas fa-map-marker-alt"></i> Plot No.-314/A, Road-18, Block-E,
-                            Bashundhara Avenue Road,
-                            Bashundhara Residential Area,
-                            Dhaka 1229, Bangladesh.</p>
-                        
+                    </div>
+                        <p><i class="fas fa-map-marker-alt"></i>{{ $basicInfo->address }}</p>
                     </div>
                 </div>
                 <!-- Single -->
@@ -25,17 +21,17 @@
                     <div class="f-widgets-single">
                         <h2>Contact</h2>
                         <p>
-                            <i class="fa fa-phone"></i> +88 02-55036456-58, 55036692, 55036696, 55036698<br>
-                            <i class="fa fa-fax"></i> +88 02-55036697<br>
-                            <i class="fa fa-mobile"></i> +88 01847-091084<br>
-                            <a style="text-decoration: none; color: inherit; cursor: pointer;" href="mailto:info@maguragroup.com.bd"><i class="fa fa-envelope"></i> info@maguragroup.com.bd</a><br>
-                            <a style="text-decoration: none; color: inherit; cursor: pointer;" href="https://maguragroup.com.bd"><i class="fa fa-globe"></i> https://maguragroup.com.bd</a><br>
+                            <i class="fa fa-phone"></i> {{ $basicInfo->telephone }}<br>
+                            <i class="fa fa-fax"></i> {{ $basicInfo->fax }}<br>
+                            <i class="fa fa-mobile"></i> {{ $basicInfo->phone }}<br>
+                            <a style="text-decoration: none; color: inherit; cursor: pointer;" href="mailto:{{ $basicInfo->email }}"><i class="fa fa-envelope"></i> {{ $basicInfo->email }}</a><br>
+                            <a style="text-decoration: none; color: inherit; cursor: pointer;" href="{{ $basicInfo->web_link }}"><i class="fa fa-globe"></i> {{ $basicInfo->web_link }}</a><br>
                         </p>
                         <div class="f-social">
-                            <span><a target="_blank" href="https://www.facebook.com/magura.group.mg"><i class="fab fa-facebook-f"></i></a></span>
-                            <span><a target="_blank" href="https://twitter.com/GroupMagura?lang=en"><i class="fab fa-twitter"></i></a></span>
-                            <span><a target="_blank" href="https://plus.google.com/u/0/107586166652443293337"><i class="fab fa-google"></i></a></span>
-                            <span><a target="_blank" href="https://www.youtube.com/channel/UCheM1ziE-laJUnfxVoaYu0g"><i class="fab fa-youtube"></i></a></span>
+                            <span><a target="_blank" href="{{ $basicInfo->facebook_link }}"><i class="fab fa-facebook-f"></i></a></span>
+                            <span><a target="_blank" href="{{ $basicInfo->twitter_link }}"><i class="fab fa-twitter"></i></a></span>
+                            <span><a target="_blank" href="{{ $basicInfo->linkedin_link }}"><i class="fab fa-linkedin"></i></a></span>
+                            <span><a target="_blank" href="{{ $basicInfo->youtube_link }}"><i class="fab fa-youtube"></i></a></span>
                         </div>
                     </div>
                 </div>
@@ -44,10 +40,9 @@
                     <div class="f-widgets-single">
                         <h2>Pages</h2>
                         <ul>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="futureaspects.html">Future Aspect</a></li>
-                            <li><a href="company-organogram.html">Company Organogram</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
+                            @foreach ($pages as $page)
+                                <li><a href="{{ $page['slug'] }}">{{ $page['title'] }}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
