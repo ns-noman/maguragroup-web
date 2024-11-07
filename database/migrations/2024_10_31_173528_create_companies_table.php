@@ -12,8 +12,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->longText('description')->nullable();
-            $table->string('site_link')->nullable();
-            $table->string('logo')->nullable();
+            $table->string('site_link');
+            $table->string('logo');
             $table->string('alt')->nullable();
             $table->integer('pn')->default(0);
             $table->tinyInteger('is_in_home')->default(1);

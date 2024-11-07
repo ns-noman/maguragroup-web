@@ -32,9 +32,11 @@ class AuthorizationService
 
     public function hasMenuAccess($menu_id)
     {
-       // Get the currently authenticated admin user
+        
+        // Get the currently authenticated admin user
         $user_role_id = Auth::guard('admin')->user()->type;
-
+        
+        \Log::info(Cache::get("role_{$user_role_id}_privileges"));
         // Cache the role's is_superadmin status
         $is_superadmin = Cache::remember("role_{$user_role_id}_superadmin", 60, function () use ($user_role_id) {
             return Role::find($user_role_id)->is_superadmin;
@@ -46,6 +48,7 @@ class AuthorizationService
                             ->where('privileges.role_id', $user_role_id)
                             ->pluck('menu_id')->toArray();
         });
+
 
         // Check if the user is a superadmin or if the menu ID is in the user's privileges
         return $is_superadmin || in_array($menu_id, $privileges);

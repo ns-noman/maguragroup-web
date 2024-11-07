@@ -8,7 +8,16 @@
             style="opacity: .8" height="30" width="30">
         <span class="brand-text font-weight-dark text-dark">{{ Auth::guard('admin')->user()->name }}</span>
     </a>
-    {{-- #083344 --}}
+    <style>
+        .cust-bg-info {
+            background-color: #0dcaf0 !important;
+            color: white;
+        }
+        .bg-success-hover:hover {
+            background-color: #198754 !important;
+        }
+
+    </style>
     <div class="sidebar" style="background-color: #000a05">
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -45,7 +54,7 @@
                                     $hasChildMenu = count($menu['childrenforsidemenu']);
                                     $currentRoute = Route::currentRouteName();
                                     $hasDropDown  = $hasChildMenu ? '<i class="fas fa-angle-left right"></i>' : '';
-                                    $create_route = $menu['create_route'] ? '<span class="badge badge-success float-right shadow-lg shadow-light"><i class="fas right fa-solid fa-plus add-new" add-new="' . route($menu['create_route']) . '"></i></span>' : '';
+                                    $create_route = $menu['create_route'] ? '<span class="badge cust-bg-info float-right shadow-lg shadow-light bg-success-hover"><i class="fas right fa-solid fa-plus add-new" add-new="' . route($menu['create_route']) . '"></i></span>' : '';
                                     $rightSideIcon = $menu['route'] ? $create_route : $hasDropDown;
                                     $routeList = childrenRouteList($menu['childrenforsidemenu']);
                                     if ($menu['route']) $routeList[] = $menu['route'];

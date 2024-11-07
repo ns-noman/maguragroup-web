@@ -11,7 +11,7 @@ Route::get('/clear', function() {
     return 'View cache has been cleared';
 });
 
-Route::get('/',function(){return redirect()->route('admin.login');});
+// Route::get('/',function(){return redirect()->route('home.index');});
 Route::get('admin',function(){return redirect()->route('admin.login');});
 Route::get('login',function(){return redirect()->route('admin.login');});
 
@@ -68,7 +68,27 @@ Route::prefix('backend')->group(function () {
                 Route::delete('delete/{id}','destroy')->name('service-types.destroy');
                 Route::get('service-types','serviceTypes')->name('service-types.serviceTypes');
             });
+
+            Route::prefix('blog-categories')->controller(BlogCategoryController::class)->group(function(){
+                Route::get('','index')->name('blog-categories.index');
+                Route::get('create','createOrEdit')->name('blog-categories.create');
+                Route::get('edit/{id?}','createOrEdit')->name('blog-categories.edit');
+                Route::post('store','store')->name('blog-categories.store');
+                Route::put('update/{id}','update')->name('blog-categories.update');
+                Route::delete('delete/{id}','destroy')->name('blog-categories.destroy');
+                Route::get('blog-categories','blogCategories')->name('blog-categories.blogCategories');
+            });
             
+            Route::prefix('blogs')->controller(BlogController::class)->group(function(){
+                Route::get('','index')->name('blogs.index');
+                Route::get('create','createOrEdit')->name('blogs.create');
+                Route::get('edit/{id?}','createOrEdit')->name('blogs.edit');
+                Route::post('store','store')->name('blogs.store');
+                Route::put('update/{id}','update')->name('blogs.update');
+                Route::delete('delete/{id}','destroy')->name('blogs.destroy');
+                Route::get('blogs','blogs')->name('blogs.blogs');
+            });
+
             Route::prefix('services')->controller(ServiceController::class)->group(function(){
                 Route::get('','index')->name('services.index');
                 Route::get('create','createOrEdit')->name('services.create');
@@ -77,6 +97,16 @@ Route::prefix('backend')->group(function () {
                 Route::put('update/{id}','update')->name('services.update');
                 Route::delete('delete/{id}','destroy')->name('services.destroy');
                 Route::get('services','services')->name('services.services');
+            });
+
+            Route::prefix('companies')->controller(CompanyController::class)->group(function(){
+                Route::get('','index')->name('companies.index');
+                Route::get('create','createOrEdit')->name('companies.create');
+                Route::get('edit/{id?}','createOrEdit')->name('companies.edit');
+                Route::post('store','store')->name('companies.store');
+                Route::put('update/{id}','update')->name('companies.update');
+                Route::delete('delete/{id}','destroy')->name('companies.destroy');
+                Route::get('companies','companies')->name('companies.companies');
             });
             
             Route::prefix('products')->controller(ProductController::class)->group(function(){
@@ -129,26 +159,13 @@ Route::prefix('backend')->group(function () {
             Route::prefix('profile')->controller(AdminController::class)->group(function(){
                 Route::match(['get', 'post'],'update-details/{id?}','updateDetails')->name('profile.update-details');;
             });
-            // Route::prefix('enews')->controller(ENewsController::class)->group(function(){
-            //     Route::get('','indexAdd')->name('enews.index');
-            //     Route::post('store','store')->name('enews.store');
-            //     Route::delete('delete/{id}','destroy')->name('enews.destroy');
-            //     Route::post('pages','pages')->name('enews.pages');
-            //     Route::post('load-news-page','loadNewsPage')->name('enews.load-news-page');
-            //     Route::post('setlink','setlink')->name('enews.setlink');
-            // });
         });
     });
 });
 
 route::namespace('App\Http\Controllers\frontend')->group(function(){
-
-    Route::prefix('weathers')->controller(WeatherController::class)->group(function(){
-        Route::get('get/wather/data','index')->name('weathers.index');
-    });
-
     Route::controller(HomeController::class)->group(function(){
-        Route::get('{date?}/{pagenum?}','index')->name('home.index');
+        Route::get('/{date?}/{pagenum?}','index')->name('home.index');
         // Route::get('article/{news_id?}/{rand?}','details')->name('home.details');
         // Route::get('print/article/{news_id}','print')->name('details.print');
     });

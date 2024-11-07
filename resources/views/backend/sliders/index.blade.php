@@ -19,7 +19,8 @@
                                     <thead>
                                         <tr>
                                             <th>SN</th>
-                                            <th>Title</th>
+                                            <th>Company Title</th>
+                                            <th>Slider Title</th>
                                             <th>Description</th>
                                             <th>Image</th>
                                             <th>Status</th>
@@ -47,6 +48,13 @@
             options.columns = 
                     [
                         { data: null, orderable: false, searchable: false },
+                        { 
+                            data: null,
+                            name: 'companies.title',
+                            render: function(data, type, row, meta) {
+                                return row.company_title ? row.company_title : 'Default Company';
+                            }
+                        },
                         { data: 'title', name: 'sliders.title'},
                         { data: 'description', name: 'sliders.description'},
                         { 

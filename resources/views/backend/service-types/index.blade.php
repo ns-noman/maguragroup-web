@@ -44,9 +44,6 @@
 @section('script')
     <script>
         $(document).ready(function(){
-
-           
-
             const options = {};
             options.url = '{{ route("service-types.serviceTypes") }}';
             options.type = 'GET';

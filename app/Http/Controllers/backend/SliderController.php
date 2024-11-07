@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Models\Slider;
+use App\Models\Company;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Yajra\DataTables\Facades\DataTables;
@@ -25,6 +26,7 @@ class SliderController extends Controller
         }else{
             $data['title'] = 'Create';
         }
+        $data['companies'] = Company::where('status',1)->get();
         $data['breadcrumb'] = $this->breadcrumb;
         return view('backend.sliders.create-edit',compact('data'));
     }
@@ -34,6 +36,7 @@ class SliderController extends Controller
         $data = $request->all();
         $data['alt'] = $data['alt'] ? $data['alt'] : $data['description'];
         $data['created_by_id'] = Auth::guard('admin')->user()->id;
+        $data['status'] = $request->input('status', 0);
         if(isset($data['image'])){
             $image = 'slider-'. time().'.'.$data['image']->getClientOriginalExtension();
             $data['image']->move(public_path('uploads/sliders'), $image);
@@ -49,6 +52,7 @@ class SliderController extends Controller
         $data = $request->all();
         $data['alt'] = $data['alt'] ? $data['alt'] : $data['description'];
         $data['updated_by_id'] = Auth::guard('admin')->user()->id;
+        $data['status'] = $request->input('status', 0);
         if(isset($data['image'])){
             $image = 'slider-'. time().'.'.$data['image']->getClientOriginalExtension();
             $data['image']->move(public_path('uploads/sliders'), $image);
@@ -71,8 +75,19 @@ class SliderController extends Controller
     }
     public function sliders(Request $request)
     {
-        $query = Slider::select(['id','title', 'description', 'image','status','srln']);
-            if(!$request->has('order')) $query = $query->orderBy('id','desc');
+        $query = Slider::leftJoin('companies', 'companies.id', '=', 'sliders.company_id')
+            ->select(
+                [
+                    'sliders.id',
+                    'companies.title as company_title',
+                    'sliders.title',
+                    'sliders.description',
+                    'sliders.image',
+                    'sliders.status',
+                    'sliders.srln'
+                ]
+            );
+            if(!$request->has('order')) $query = $query->orderBy('sliders.id','desc');
         return DataTables::of($query)->make(true);
     }
 
