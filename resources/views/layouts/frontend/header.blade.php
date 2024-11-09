@@ -1,3 +1,5 @@
+
+
 <!-- Preloader -->
 {{-- <div id="preloader">
     <div class="preloader">
@@ -92,7 +94,7 @@
 
                                                 $hasChildMenu = $menu['frontendsubmenus'] ? true : false;
                                                 $plusIcon = $hasChildMenu ? 'menu-item-has-children' : '';
-                                                $route = !$hasChildMenu ? $menu['slug'] : 'javascript:void(0)';
+                                                $route = !$hasChildMenu ? route('home.index',[$menu['slug']]) : 'javascript:void(0)';
                                                 $title = $menu['title'];
                                                 $active = request()->path() == $menu['slug'] ? 'active' : '';
 
@@ -119,21 +121,7 @@
 
                                 {!! makemenu($frontendmenus) !!}
 
-                                {{-- <li>
-                                    <a class="active" href="index.html" >Home</a>
-                                </li>
-                                <li class="menu-item-has-children active"><a href="about.html">About Us</a>
-                                    <ul>
-                                        <li><a href="about.html">Corporate Profile</a></li>
-                                        <li><a href="mv-values.html">Mission, Vission & Values</a></li>
-                                        <li><a href="services.html">Services</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="shop-grid.html">Products</a></li>
-                                <li><a href="companies.html">Companies</a></li>
-                                <li><a href="chairman-speech.html">Chairman Speech</a></li>
-                                <li><a href="blog-grid.html">Blogs</a></li>
-                                <li><a href="contact.html">Contact Us</a></li> --}}
+
                             </ul>
                         </nav>
                     </div>
@@ -155,7 +143,7 @@
             </div>
             <div class="mobile-logo">
                 <a href="index.html">
-                    <img src="assets/img/basic/logo.png" alt="logo">
+                    <img src="{{ asset('public/uploads/basic-info/'.$basicInfo->logo) }}" alt="logo">
                 </a>
             </div>
             <div id="menu" class="text-left ">

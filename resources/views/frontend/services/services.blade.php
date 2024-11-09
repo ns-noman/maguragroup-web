@@ -17,26 +17,13 @@
                         <div class="info-box">
                             <div class="icon">{!! $serviceType['icon'] !!}</div>
                             <div class="content">
-                                <h2><a href="services-details.html">{{ $serviceType['title'] }}</a></h2>
+                                <h2><a href="{{ route('home.index', ['services-6', $serviceType['id']]) }}">{{ $serviceType['title'] }}</a></h2>
                                 <p style="height: 120px;">{{ $serviceType['description'] }}</p>
-                                <a class="get_link" href="services-details.html">View Details <i class="bi bi-arrow-right"></i></a>
+                                <a class="get_link" href="{{ route('home.index', ['services-6', $serviceType['id']]) }}">View Details <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                 @endforeach
-				{{-- <div class="col-lg-4 col-md-6 mb-30">
-					<div class="info-box">
-						<div class="icon">
-							<i class="fas fa-utensils" style="font-size: 65px;"></i>
-						</div>
-						<div class="content">
-							<h2><a href="services-details.html">Food</a></h2>
-							<p style="height: 120px;">Our food service delivers fresh, high-quality meals and catering options, focusing on taste and customer satisfaction.</p>
-							<a class="get_link" href="services-details.html">Get Now <i
-									class="bi bi-arrow-right"></i></a>
-						</div>
-					</div>
-				</div> --}}
 			</div>
 		</div>
 	</section>

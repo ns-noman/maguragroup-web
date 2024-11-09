@@ -6,6 +6,7 @@ use App\Models\Slider;
 use App\Models\Company;
 use App\Models\BasicInfo;
 use App\Models\ServiceType;
+use App\Models\Service;
 use App\Models\Product;
 use App\Models\Blog;
 use App\Models\Gallery;
@@ -16,7 +17,7 @@ use Auth;
 
 class HomeController extends Controller
 {
-    public function index($slug = null)
+    public function index($slug = null, $id = null)
     {
         
         if($slug == null) return redirect()->route('home.index',['home-1']);
@@ -29,13 +30,19 @@ class HomeController extends Controller
         $data['breadcrumb'] = ['title'=> FrontendMenu::find($menuID)->title];
 
         if($menuID == 2){
-        } else if($menuID == 4){
+        } else if($menuID == 3 || $menuID == 4){
             $view = 'corporate-profile';
         } else if($menuID == 5){
             $view = 'mvv';
         } else if($menuID == 6){
-            $view = 'services';
-            $data['serviceTypes'] = ServiceType::where(['status'=> 1])->select(['title','description','icon',])->orderBy('id')->get()->toArray();
+            if($id){
+                $view = 'services.service-details';
+                $data['services'] = Service::where(['service_type_id'=>$id, 'status'=> 1])->select(['id','title','description','image','alt'])->orderBy('pn')->get()->toArray();
+                $data['serviceTypeTitle'] = ServiceType::find($menuID)->title;
+            }else{
+                $view = 'services.services';
+                $data['serviceTypes'] = ServiceType::where(['status'=> 1])->select(['id','title','description','icon',])->orderBy('id')->get()->toArray();
+            }
         } else if($menuID == 7){
             $view = 'products';
             $data['products'] = Product::where(['status'=> 1])->select(['title','description','image','alt'])->orderBy('pn')->get()->toArray();
@@ -50,6 +57,10 @@ class HomeController extends Controller
         } else if($menuID == 11){
             $view = 'contacts';            
             $data['basicInfo'] = BasicInfo::select(['phone','telephone','fax','email','location','address','map_embed'])->first()->toArray();
+        } else if($menuID == 12){
+            $view = 'future-aspect';
+        } else if($menuID == 13){
+            $view = 'company-organogram';
         } else{
             $view = 'index';
             $data['sliders'] = Slider::where(['status'=>1, 'company_id'=>0])->select(['title', 'description', 'image', 'alt'])->orderBy('srln')->get()->toArray();
@@ -60,9 +71,6 @@ class HomeController extends Controller
             $data['blogs'] = Blog::with(['admin', 'blogcategory'])->where(['is_in_home' => 1, 'status' => 1])->select(['title', 'short_description', 'image', 'alt', 'cat_id', 'created_by_id', 'pn','created_at'])->orderBy('pn')->get()->toArray();
             $data['galleris'] = Gallery::where(['status'=> 1])->select(['id','image','alt'])->orderBy('srln')->get()->toArray();
         }
-
-
-       
         return view("frontend.$view", compact('data'));
     }
 }

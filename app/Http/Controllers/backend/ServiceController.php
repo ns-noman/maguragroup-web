@@ -87,7 +87,7 @@ class ServiceController extends Controller
             ]);
 
         if (!$request->has('order')) {
-            $query = $query->orderBy('services.id', 'desc');
+            $query = $query->orderBy('service_types.title', 'asc')->orderBy('services.pn', 'asc');
         }
 
         return DataTables::of($query)->make(true);

@@ -409,8 +409,8 @@
 		<div class="instagram-feed owl-carousel">
 			@foreach ($data['galleris'] as $gallery)
 				<div class="ins-single">
-					<a data-rel="lightcase:myCollection:instagram" style="width: 380px; height: 380px;" href="{{ asset("public/uploads/galleries/". $gallery['image']) }}">
-						<img style="width: 380px; height: 380px;" src="{{ asset("public/uploads/galleries/". $gallery['image']) }}" alt="{{ $gallery['alt'] }}">
+					<a data-rel="lightcase:myCollection:instagram" href="{{ asset("public/uploads/galleries/". $gallery['image']) }}">
+						<img src="{{ asset("public/uploads/galleries/". $gallery['image']) }}" alt="{{ $gallery['alt'] }}">
 					</a>
 				</div>
 			@endforeach

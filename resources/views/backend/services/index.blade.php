@@ -19,6 +19,7 @@
                                     <thead>
                                         <tr>
                                             <th>SN</th>
+                                            <th>Priority Number</th>
                                             <th>Service Type</th>
                                             <th>Title</th>
                                             <th>Description</th>
@@ -48,6 +49,7 @@
             options.columns = 
                     [
                         { data: null, orderable: false, searchable: false },
+                        { data: 'pn', name: 'services.pn'},
                         { data: 'service_type_title', name: 'service_type.title'},
                         { data: 'title', name: 'service_types.title'},
                         { data: 'description', name: 'services.description'},
@@ -56,8 +58,12 @@
                             orderable: false, 
                             searchable: false, 
                             render: function(data, type, row, meta) {
-                                src = `{{ asset("public/uploads/services/:image") }}`.replace(':image', row.image);
-                                return `<img width="50px" height="50px" src="${src}">`;
+                                let img = '';
+                                if(row.image !=null){
+                                    src = `{{ asset("public/uploads/services/:image") }}`.replace(':image', row.image);
+                                    img = `<img width="50px" height="50px" src="${src}">`;
+                                }
+                                return img;
                             }
                         },
                         { 

@@ -165,7 +165,7 @@ Route::prefix('backend')->group(function () {
 
 route::namespace('App\Http\Controllers\frontend')->group(function(){
     Route::controller(HomeController::class)->group(function(){
-        Route::get('/{slug?}','index')->name('home.index');
+        Route::get('/{slug?}/{id?}','index')->name('home.index');
         // Route::get('article/{news_id?}/{rand?}','details')->name('home.details');
         // Route::get('print/article/{news_id}','print')->name('details.print');
     });

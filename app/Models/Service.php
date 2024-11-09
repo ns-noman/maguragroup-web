@@ -15,7 +15,7 @@ class Service extends Model
         'title',
         'description',
         'image',
-        'alt','is_in_home',
+        'alt',
         'status',
         'created_by_id',
         'updated_by_id',
