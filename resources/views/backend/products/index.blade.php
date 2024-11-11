@@ -20,7 +20,6 @@
                                         <tr>
                                             <th>SN</th>
                                             <th>Title</th>
-                                            <th>Description</th>
                                             <th>Image</th>
                                             <th>Is In Home?</th>
                                             <th>Status</th>
@@ -49,7 +48,6 @@
                     [
                         { data: null, orderable: false, searchable: false },
                         { data: 'title', name: 'products.title'},
-                        { data: 'description', name: 'products.description'},
                         { 
                             data: null,
                             orderable: false, 

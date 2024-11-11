@@ -44,16 +44,35 @@ class HomeController extends Controller
                 $data['serviceTypes'] = ServiceType::where(['status'=> 1])->select(['id','title','description','icon',])->orderBy('id')->get()->toArray();
             }
         } else if($menuID == 7){
-            $view = 'products';
-            $data['products'] = Product::where(['status'=> 1])->select(['title','description','image','alt'])->orderBy('pn')->get()->toArray();
+            if($id){
+                $view = 'products.product-details';
+                $data['productDetails'] = Product::find($id)->toArray();
+            }else{
+                $view = 'products.products';
+                $data['products'] = Product::where(['status'=> 1])->select(['id', 'title','description','image','alt'])->orderBy('pn')->get()->toArray();
+            }
         } else if($menuID == 8){
             $view = 'companies';
-            $data['companies'] = Company::where(['status'=> 1])->select(['title','description','logo','alt','site_link'])->orderBy('pn')->get()->toArray();
+            $data['companies'] = Company::where(['status'=> 1])->select(['id', 'title','description','logo','alt','site_link'])->orderBy('pn')->get()->toArray();
         } else if($menuID == 9){
             $view = 'chairman-speech';
         } else if($menuID == 10){
-            $view = 'blogs';
-            $data['blogs'] = Blog::with(['admin', 'blogcategory'])->where(['is_in_home' => 1, 'status' => 1])->select(['title', 'short_description', 'image', 'alt', 'cat_id', 'created_by_id', 'pn','created_at'])->orderBy('pn')->get()->toArray();
+            if($id){
+                $view = 'blogs.blog-details';
+                $data['blog'] = Blog::with(['admin', 'blogcategory'])->find($id)->toArray();
+                $data['recentBlogs'] = Blog::with(['admin', 'blogcategory'])
+                                        ->where(['status' => 1])
+                                        ->whereNotIn('id', [$id])
+                                        ->select(['id', 'title', 'short_description', 'image', 'alt', 'cat_id', 'created_by_id', 'pn','created_at'])
+                                        ->orderBy('pn')
+                                        ->orderByDesc('id')
+                                        ->limit(4)
+                                        ->get()
+                                        ->toArray();
+            }else{ 
+                $view = 'blogs.blogs';
+                $data['blogs'] = Blog::with(['admin', 'blogcategory'])->where(['status' => 1])->select(['id', 'title', 'short_description', 'image', 'alt', 'cat_id', 'created_by_id', 'pn','created_at'])->orderBy('pn')->get()->toArray();
+            }
         } else if($menuID == 11){
             $view = 'contacts';            
             $data['basicInfo'] = BasicInfo::select(['phone','telephone','fax','email','location','address','map_embed'])->first()->toArray();
@@ -63,12 +82,12 @@ class HomeController extends Controller
             $view = 'company-organogram';
         } else{
             $view = 'index';
-            $data['sliders'] = Slider::where(['status'=>1, 'company_id'=>0])->select(['title', 'description', 'image', 'alt'])->orderBy('srln')->get()->toArray();
+            $data['sliders'] = Slider::where(['status'=>1, 'company_id'=>0])->select(['id', 'title', 'description', 'image', 'alt'])->orderBy('srln')->get()->toArray();
             $data['basicInfo'] = BasicInfo::select(['assets_value','total_employees','total_companies','start_year','map_embed','video_embed_1','video_embed_2','video_embed_3'])->first()->toArray();
-            $data['serviceTypes'] = ServiceType::where(['is_in_home'=> 1, 'status'=> 1])->select(['title','description','icon',])->orderBy('id')->get()->toArray();
-            $data['products'] = Product::where(['is_in_home'=> 1, 'status'=> 1])->select(['title','description','image','alt'])->orderBy('pn')->get()->toArray();
-            $data['companies'] = Company::where(['is_in_home'=> 1, 'status'=> 1])->select(['title','description','logo','alt','site_link'])->orderBy('pn')->get()->toArray();
-            $data['blogs'] = Blog::with(['admin', 'blogcategory'])->where(['is_in_home' => 1, 'status' => 1])->select(['title', 'short_description', 'image', 'alt', 'cat_id', 'created_by_id', 'pn','created_at'])->orderBy('pn')->get()->toArray();
+            $data['serviceTypes'] = ServiceType::where(['is_in_home'=> 1, 'status'=> 1])->select(['id', 'title','description','icon',])->orderBy('id')->get()->toArray();
+            $data['products'] = Product::where(['is_in_home'=> 1, 'status'=> 1])->select(['id', 'title','description','image','alt'])->orderBy('pn')->get()->toArray();
+            $data['companies'] = Company::where(['is_in_home'=> 1, 'status'=> 1])->select(['id', 'title','description','logo','alt','site_link'])->orderBy('pn')->get()->toArray();
+            $data['blogs'] = Blog::with(['admin', 'blogcategory'])->where(['is_in_home' => 1, 'status' => 1])->select(['id', 'title', 'short_description', 'image', 'alt', 'cat_id', 'created_by_id', 'pn','created_at'])->orderBy('pn')->get()->toArray();
             $data['galleris'] = Gallery::where(['status'=> 1])->select(['id','image','alt'])->orderBy('srln')->get()->toArray();
         }
         return view("frontend.$view", compact('data'));

@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/clear', function() {   
     Artisan::call('cache:clear');
     Artisan::call('route:clear');
-    Artisan::call('config:cache');
+    Artisan::call('config:clear');
     Artisan::call('view:clear');
     Artisan::call('logs:clear');
     return 'View cache has been cleared';
@@ -166,8 +166,6 @@ Route::prefix('backend')->group(function () {
 route::namespace('App\Http\Controllers\frontend')->group(function(){
     Route::controller(HomeController::class)->group(function(){
         Route::get('/{slug?}/{id?}','index')->name('home.index');
-        // Route::get('article/{news_id?}/{rand?}','details')->name('home.details');
-        // Route::get('print/article/{news_id}','print')->name('details.print');
     });
 
 });

@@ -21,8 +21,6 @@
                                             <th>SN</th>
                                             <th>Blog Type</th>
                                             <th>Title</th>
-                                            <th>Short Description</th>
-                                            <th>Description</th>
                                             <th>Image</th>
                                             <th>Is In Home?</th>
                                             <th>Status</th>
@@ -52,8 +50,6 @@
                         { data: null, orderable: false, searchable: false },
                         { data: 'blog_category_title', name: 'blog_categories.title'},
                         { data: 'title', name: 'blogs.title'},
-                        { data: 'short_description', name: 'blogs.short_description'},
-                        { data: 'description', name: 'blogs.description'},
                         { 
                             data: null,
                             orderable: false, 

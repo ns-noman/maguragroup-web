@@ -35,7 +35,7 @@
                                             <textarea cols="30" rows="5" class="form-control" id="description" placeholder="Description" name="description" required>{{ isset($data['items']) ? $data['items']->description : null }}</textarea>
                                         </div>
                                         <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                                            <label for="image">Image</label>
+                                            <label for="image">Image (640X428)</label>
                                             <input value="{{ isset($data['items']) ? $data['items']->image : null }}" type="file" class="form-control" id="image" placeholder="image" name="image" @required(!isset($data['items']))>
                                         </div>
                                         <div class="form-group col-sm-3 col-md-3 col-lg-3">

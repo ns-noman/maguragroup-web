@@ -5,12 +5,22 @@
 		<div class="container">
 			<!-- Blog  -->
 			<div class="row">
+				<style>
+					.blog-item .content p {
+						min-height: 90px;
+						overflow: hidden;
+					}
+					.blog-item .content h3 {
+						min-height: 60px;
+						overflow: hidden;
+					}
+				</style>
 
 				@foreach ($data['blogs'] as $blog)
 					<div class="col-lg-4 col-md-6 mb-30">
 						<div class="blog-item">
 							<div class="thumnail">
-								<a href="single.html">
+								<a href="{{ route('home.index', ['blogs-10', $blog['id']]) }}">
 									<img style="width: 387px; height: 259px" src="{{ asset("public/uploads/blogs/". $blog['image']) }}" alt="{{ $blog['alt'] }}">
 								</a>
 							</div>
@@ -29,38 +39,12 @@
 									<a href="#"><i class="fas fa-user"></i> {{ $blog['admin']['name'] }}</a>
 									<a href="#"><i class="fas fa-tags"></i> {{ $blog['blogcategory']['title'] }}</a>
 								</div>
-								<h3><a href="single.html">{{ $blog['title'] }}</a></h3>
-								<p>{{ $blog['short_description'] }}</p>
+								<h3><a href="{{ route('home.index', ['blogs-10', $blog['id']]) }}">{{ Str::limit($blog['title'], 50, '...') }}</a></h3>
+								<p>{{ Str::limit($blog['short_description'], 120, '...') }}</p>
 							</div>
 						</div>
 					</div>
 				@endforeach
-
-				<!-- Single -->
-				{{-- <div class="col-lg-4 col-md-6 mb-30">
-					<div class="blog-item">
-						<div class="thumnail">
-							<a href="single.html">
-								<img src="assets/img/blog/1.jpg" alt="blog">
-							</a>
-						</div>
-						<div class="content">
-							<div class="post-date">
-                                <span>31</span>
-                                Oct
-                            </div>
-                            <div class="blog-meta">
-                            	<a href="#"><i class="fas fa-user"></i> Admin</a>
-                            	<a href="#"><i class="fas fa-tags"></i> Technology</a>
-                            </div>
-                            <h3><a href="single.html">Five Ways to Develop a World Class Sales Operations</a></h3>
-                            <p>Nulla ac suscipit nisi. Sed rhoncus, nisl ut rutrum maximus, justo dui malesuada magna, non eleifend</p>
-						</div>
-					</div>
-				</div> --}}
-
-
-
 			</div>
 			<!-- Pagination -->
 			<div class="row mt-10 mb-30 text-center">

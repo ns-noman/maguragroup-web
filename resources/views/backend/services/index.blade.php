@@ -22,7 +22,6 @@
                                             <th>Priority Number</th>
                                             <th>Service Type</th>
                                             <th>Title</th>
-                                            <th>Description</th>
                                             <th>Image</th>
                                             <th>Status</th>
                                             <th>Action</th>
@@ -52,7 +51,6 @@
                         { data: 'pn', name: 'services.pn'},
                         { data: 'service_type_title', name: 'service_type.title'},
                         { data: 'title', name: 'service_types.title'},
-                        { data: 'description', name: 'services.description'},
                         { 
                             data: null,
                             orderable: false, 

@@ -16,25 +16,17 @@
                                     @method('put')
                                 @endif
                                 <div class="card-body">
-                                    {{-- 'title',
-                                    'description',
-                                    'image',
-                                    'alt',
-                                    'pn',
-                                    'status',
-                                    'created_by_id',
-                                    'updated_by_id', --}}
                                     <div class="row">
-                                        <div class="form-group col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-group col-sm-12 col-md-12 col-lg-12">
                                             <label for="">Product Title *</label>
                                             <input value="{{ isset($data['items']) ? $data['items']->title : null }}" type="text" class="form-control" id="title" placeholder="Product Title" name="title" required>
                                         </div>
-                                        <div class="form-group col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-group col-sm-12 col-md-12 col-lg-12">
                                             <label for="description">Description *</label>
                                             <textarea cols="30" rows="1" class="form-control" id="description" placeholder="Description" name="description" required>{{ isset($data['items']) ? $data['items']->description : null }}</textarea>
                                         </div>
                                         <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                                            <label for="image">Image {{ !isset($data['items']) ? '*' : null }} (800 X 700)</label>
+                                            <label for="image">Image {{ !isset($data['items']) ? '*' : null }} (640 X 428)</label>
                                             <input value="{{ isset($data['items']) ? $data['items']->image : null }}" type="file" class="form-control" id="image" placeholder="image" name="image" @required(!isset($data['items']))>
                                         </div>
                                         <div class="form-group col-sm-2 col-md-2 col-lg-2">
@@ -70,4 +62,13 @@
             </div>
         </section>
     </div>
+@endsection
+@section('script')
+<script>
+    $('#description').summernote({
+        placeholder: 'Description',
+        tabsize: 2,
+        height: 120
+    });
+</script>
 @endsection

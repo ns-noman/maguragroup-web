@@ -213,9 +213,9 @@
                         <div class="info-box">
                             <div class="icon">{!! $serviceType['icon'] !!}</div>
                             <div class="content">
-                                <h2><a href="services-details.html">{{ $serviceType['title'] }}</a></h2>
+                                <h2><a href="{{ route('home.index', ['services-6', $serviceType['id']]) }}">{{ $serviceType['title'] }}</a></h2>
                                 <p style="height: 120px;">{{ $serviceType['description'] }}</p>
-                                <a class="get_link" href="services-details.html">View Details <i class="bi bi-arrow-right"></i></a>
+                                <a class="get_link" href="{{ route('home.index', ['services-6', $serviceType['id']]) }}">View Details <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -226,7 +226,7 @@
 	<!-- End Services Area -->
 
 	<!-- Start Featured Product Area -->
-	<section class="section-padding">
+	<section class="section-padding" style="background: #b6faf6;">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 mb-50 text-center">
@@ -241,17 +241,17 @@
                     @foreach($data['products'] as $key => $product)
                         <div class="product-item">
                             <div class="thumbnail">
-                                <a href="product-details.html">
+                                <a href="{{ route('home.index', ['products-7', $product['id']]) }}">
                                     <img style="height: 255.75px;" src="{{ asset("public/uploads/products/". $product['image']) }}" alt="img">
                                 </a>
                                 <div class="product-overly">
                                     <ul>
-                                        <li><a href="product-details.html" title="Views:2021"><i class="bi bi-eye"></i></a></li>
+                                        <li><a href="{{ route('home.index', ['products-7', $product['id']]) }}" title="Views:2021"><i class="bi bi-eye"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="content">
-                                <h2 class="title"><a href="product-details.html">{{ $product['title'] }}</a></h2>
+                                <h2 class="title"><a href="{{ route('home.index', ['products-7', $product['id']]) }}">{{ $product['title'] }}</a></h2>
                             </div>
                         </div>
                     @endforeach
@@ -280,7 +280,7 @@
 
 
 	<!-- Start Category Area -->
-	<section class="section-padding-2">
+	<section class="section-padding-2"  style="background: #94fdec;">
 		<div class="container">
 			<!-- Section Headding -->
 			<div class="row">
@@ -296,8 +296,8 @@
 			<style>
 				.owl-carousel .item a {
 				  height: 150px;
-				  color: #fff;
-				  background: #008E00;
+				  color: #080808;
+				  background: #1cf5f5;
 				  border-radius: 10px;
 				  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
 				  display: flex;
@@ -308,7 +308,7 @@
 				.owl-carousel .item h4 {
 				  margin: 0;
 				  font-size: 22px;
-				  color: white;
+				  color: #080808;
 				  text-transform:uppercase;
 				  font-weight:bold;
 				}
@@ -357,7 +357,16 @@
 		</div>
 	</section>
 	<!-- End Category Area -->
-
+	<style>
+		.blog-item .content p {
+			min-height: 90px;
+			overflow: hidden;
+		}
+		.blog-item .content h3 {
+			min-height: 60px;
+			overflow: hidden;
+		}
+	</style>
 	<!-- Start Blog Area -->
 	<section class="section-padding-2">
 		<div class="container">
@@ -374,7 +383,7 @@
 					<div class="col-lg-4 col-md-6 mb-30">
 						<div class="blog-item">
 							<div class="thumnail">
-								<a href="single.html">
+								<a href="{{ route('home.index', ['blogs-10', $blog['id']]) }}">
 									<img style="width: 387px; height: 259px" src="{{ asset("public/uploads/blogs/". $blog['image']) }}" alt="{{ $blog['alt'] }}">
 								</a>
 							</div>
@@ -393,8 +402,8 @@
 									<a href="#"><i class="fas fa-user"></i> {{ $blog['admin']['name'] }}</a>
 									<a href="#"><i class="fas fa-tags"></i> {{ $blog['blogcategory']['title'] }}</a>
 								</div>
-								<h3><a href="single.html">{{ $blog['title'] }}</a></h3>
-								<p>{{ $blog['short_description'] }}</p>
+								<h3><a href="{{ route('home.index', ['blogs-10', $blog['id']]) }}">{{ Str::limit($blog['title'], 50, '...') }}</a></h3>
+								<p>{{ Str::limit($blog['short_description'], 120, '...') }}</p>
 							</div>
 						</div>
 					</div>

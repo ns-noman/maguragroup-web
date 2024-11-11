@@ -36,6 +36,8 @@ class ProductController extends Controller
         $data['created_by_id'] = Auth::guard('admin')->user()->id;
         $data['is_in_home'] = $request->input('is_in_home', 0);
         $data['status'] = $request->input('status', 0);
+        $data['pn'] = $data['pn'] ?? 0;
+
         if(isset($data['image'])){
             $image = 'product-'. time().'.'.$data['image']->getClientOriginalExtension();
             $data['image']->move(public_path('uploads/products'), $image);
@@ -53,6 +55,7 @@ class ProductController extends Controller
         $data['status'] = $request->input('status', 0);
         $data['alt'] = $data['alt'] ? $data['alt'] : $data['title'];
         $data['updated_by_id'] = Auth::guard('admin')->user()->id;
+        $data['pn'] = $request->input('pn', 0);
         if(isset($data['image'])){
             $image = 'product-'. time().'.'.$data['image']->getClientOriginalExtension();
             $data['image']->move(public_path('uploads/products'), $image);
@@ -77,7 +80,7 @@ class ProductController extends Controller
     {
         $query = Product::select(['id','title','description','image','alt','pn','is_in_home','status']);
         if (!$request->has('order')) {
-            $query = $query->orderBy('pn', 'desc');
+            $query = $query->orderBy('pn', 'asc');
         }
         return DataTables::of($query)->make(true);
     }

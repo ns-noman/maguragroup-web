@@ -27,11 +27,11 @@
                                             </select>
                                         </div>
                                         <div class="form-group col-sm-8 col-md-8 col-lg-8">
-                                            <label for="">Service Title *</label>
-                                            <input value="{{ isset($data['items']) ? $data['items']->title : null }}" type="text" class="form-control" id="title" placeholder="Service Title" name="title" required>
+                                            <label for="">Blot Title  (max: 50 charcters)*</label>
+                                            <input value="{{ isset($data['items']) ? $data['items']->title : null }}" type="text" class="form-control" id="title" placeholder="Blot Title" name="title" required>
                                         </div>
                                         <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                                            <label for="short_description">Short Description *</label>
+                                            <label for="short_description">Short Description (max: 120 charcters)*</label>
                                             <textarea cols="30" rows="5" class="form-control" id="short_description" placeholder="Short Description" name="short_description" required>{{ isset($data['items']) ? $data['items']->short_description : null }}</textarea>
                                         </div>
                                         <div class="form-group col-sm-8 col-md-8 col-lg-8">
@@ -39,7 +39,7 @@
                                             <textarea cols="30" rows="5" class="form-control" id="description" placeholder="Description" name="description" required>{{ isset($data['items']) ? $data['items']->description : null }}</textarea>
                                         </div>
                                         <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                                            <label for="image">Image {{ !isset($data['items']) ? '*' : null }} (800 X 535)</label>
+                                            <label for="image">Image {{ !isset($data['items']) ? '*' : null }} (640 X 428)</label>
                                             <input value="{{ isset($data['items']) ? $data['items']->image : null }}" type="file" class="form-control" id="image" placeholder="image" name="image" @required(!isset($data['items']))>
                                         </div>
                                         <div class="form-group col-sm-3 col-md-3 col-lg-3">
