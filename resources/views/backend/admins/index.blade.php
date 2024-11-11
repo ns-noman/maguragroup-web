@@ -84,7 +84,7 @@
                             orderable: true, 
                             searchable: false, 
                             render: function(data, type, row, meta) {
-                                return row.status === 1? 'Active' : 'Inactive';
+                                return row.status == '1'? 'Active' : 'Inactive';
                             }
                         },
                         { 

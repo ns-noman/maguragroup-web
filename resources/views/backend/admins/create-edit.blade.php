@@ -53,8 +53,8 @@
                                         <div class="form-group col-sm-12 col-md-12 col-lg-12">
                                             <label>Status</label>
                                             <select name="status" id="status" class="form-control">
-                                                <option @selected(($data['item']->status ?? null) === 1) value="1">Active</option>
-                                                <option @selected(($data['item']->status ?? null) === 0) value="0">Inactive</option>
+                                                <option @selected(($data['item']->status ?? null) == 1) value="1">Active</option>
+                                                <option @selected(($data['item']->status ?? null) == 0) value="0">Inactive</option>
                                             </select>
                                         </div>
                                     </div>
