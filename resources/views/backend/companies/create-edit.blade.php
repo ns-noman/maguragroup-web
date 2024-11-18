@@ -23,7 +23,7 @@
                                         </div>
                                         <div class="form-group col-sm-6 col-md-6 col-lg-6">
                                             <label for="site_link">Site Link</label>
-                                            <input value="{{ isset($data['items']) ? $data['items']->site_link : null }}" type="text" class="form-control" id="site_link" placeholder="https://maguragroup.com.bd" name="site_link" @required(!isset($data['items']))>
+                                            <input value="{{ isset($data['items']) ? $data['items']->site_link : null }}" type="text" class="form-control" id="site_link" placeholder="https://maguragroup.com.bd" name="site_link">
                                         </div>
                                         <div class="form-group col-sm-12 col-md-12 col-lg-12">
                                             <label for="description">Description</label>

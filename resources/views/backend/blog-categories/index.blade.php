@@ -53,7 +53,7 @@
                             orderable: false, 
                             searchable: false, 
                             render: function(data, type, row, meta) {
-                                return return `<span class="badge badge-${row.status == '1' ? 'success' : 'warning'}">${row.status == '1' ? 'Active' : 'Inactive'}</span>`;
+                                return `<span class="badge badge-${row.status ? 'success' : 'warning'}">${row.status ? 'Active' : 'Inactive'}</span>`;
                             }
                         },
                         { 
