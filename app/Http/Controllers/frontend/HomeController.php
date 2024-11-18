@@ -17,17 +17,15 @@ use Auth;
 
 class HomeController extends Controller
 {
-    public function index($slug = null, $id = null)
+    public function index($slug = 'home', $id = null)
     {
-        
-        if($slug == null) return redirect()->route('home.index',['home-1']);
-        $slugArr = explode('-', $slug);
-        $menuID = end($slugArr);
-        
         $data = [];
         $view = 'index';
+        $menu = FrontendMenu::where(['status' => 1, 'slug' => $slug])->first();
+        if(!$menu) return redirect()->route('home.index');
+        $data['breadcrumb'] = ['title'=> $menu->title];
+        $menuID = $menu->id;
 
-        $data['breadcrumb'] = ['title'=> FrontendMenu::find($menuID)->title];
 
         if($menuID == 2){
         } else if($menuID == 3 || $menuID == 4){

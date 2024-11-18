@@ -20,7 +20,7 @@
 					<div class="col-lg-4 col-md-6 mb-30">
 						<div class="blog-item">
 							<div class="thumnail">
-								<a href="{{ route('home.index', ['blogs-10', $blog['id']]) }}">
+								<a href="{{ route('home.index', ['blogs', $blog['id']]) }}">
 									<img style="width: 387px; height: 259px" src="{{ asset("public/uploads/blogs/". $blog['image']) }}" alt="{{ $blog['alt'] }}">
 								</a>
 							</div>
@@ -39,7 +39,7 @@
 									<a href="#"><i class="fas fa-user"></i> {{ $blog['admin']['name'] }}</a>
 									<a href="#"><i class="fas fa-tags"></i> {{ $blog['blogcategory']['title'] }}</a>
 								</div>
-								<h3><a href="{{ route('home.index', ['blogs-10', $blog['id']]) }}">{{ Str::limit($blog['title'], 50, '...') }}</a></h3>
+								<h3><a href="{{ route('home.index', ['blogs', $blog['id']]) }}">{{ Str::limit($blog['title'], 50, '...') }}</a></h3>
 								<p>{{ Str::limit($blog['short_description'], 120, '...') }}</p>
 							</div>
 						</div>

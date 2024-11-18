@@ -14,7 +14,7 @@
 				<div class="col-lg-8 align-self-center">
 					<div class="about-content">
 						<h4 class="sc_subtitle"><span>Chairman Speech</span></h4>
-						<h2 class="sc_title">Honourable Chairman</h2>
+						<h2 class="sc_title"></h2>
 						<p>The emergence of Magura Group as a Conglomerate is the result of combined efforts for over the past two and a half decade. The Group is working with the vision to ensure welfare for the people through better social services. To this aim, the Group is being thoroughly involved in multi dimensional activities, related to satisfying the basic needs of human expectation.</p>
 						<p>Adaptability, versatility, reliability and capability are the ideals of Magura Group, which are being successfully followed in all our business units. Over the years, we have extended our business activities in different dimensions and have been able to emerge as a promoter of business houses and industrial enterprises with the support of highly capable professionals.</p>
 						<p>Since inception we are contributing significantly to the national economy through effective utilization of indigenous resources for production and marketing of quality products at a competitive price and are thereby creating scope for employment.</p>

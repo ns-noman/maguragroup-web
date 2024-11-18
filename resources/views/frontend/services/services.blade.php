@@ -17,9 +17,9 @@
                         <div class="info-box">
                             <div class="icon">{!! $serviceType['icon'] !!}</div>
                             <div class="content">
-                                <h2><a href="{{ route('home.index', ['services-6', $serviceType['id']]) }}">{{ $serviceType['title'] }}</a></h2>
+                                <h2><a href="{{ route('home.index', ['services', $serviceType['id']]) }}">{{ $serviceType['title'] }}</a></h2>
                                 <p style="height: 120px;">{{ $serviceType['description'] }}</p>
-                                <a class="get_link" href="{{ route('home.index', ['services-6', $serviceType['id']]) }}">View Details <i class="bi bi-arrow-right"></i></a>
+                                <a class="get_link" href="{{ route('home.index', ['services', $serviceType['id']]) }}">View Details <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>

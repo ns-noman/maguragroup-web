@@ -167,6 +167,9 @@ route::namespace('App\Http\Controllers\frontend')->group(function(){
     Route::controller(HomeController::class)->group(function(){
         Route::get('/{slug?}/{id?}','index')->name('home.index');
     });
+    Route::prefix('messages')->controller(MessageFEController::class)->group(function(){
+        Route::post('store','store')->name('messages.store');
+    });
 
 });
 

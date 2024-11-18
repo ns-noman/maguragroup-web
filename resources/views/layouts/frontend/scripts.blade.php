@@ -12,7 +12,7 @@
 <script src="{{ asset('public/frontend-assets') }}/js/wow.min.js"></script>
 <script src="{{ asset('public/frontend-assets') }}/js/mobile-menu.js"></script>
 <script src="{{ asset('public/frontend-assets') }}/js/script.js"></script>
-
+<script src="{{ asset('public/frontend-assets') }}/plugins/toastr/toastr.min.js"></script>
 
 <script>
     $(document).ready(function() {

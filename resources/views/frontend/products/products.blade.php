@@ -8,17 +8,17 @@
 					<div class="col-lg-4 col-md-6 mb-30">
 						<div class="product-item">
 							<div class="thumbnail">
-								<a href="{{ route('home.index', ['products-7', $product['id']]) }}">
+								<a href="{{ route('home.index', ['products', $product['id']]) }}">
 									<img src="{{ asset("public/uploads/products/". $product['image']) }}" alt="img">
 								</a>
 								<div class="product-overly">
 									<ul>
-										<li><a href="{{ route('home.index', ['products-7', $product['id']]) }}" title="Views:2021"><i class="bi bi-eye"></i></a></li>
+										<li><a href="{{ route('home.index', ['products', $product['id']]) }}" title="Views:2021"><i class="bi bi-eye"></i></a></li>
 									</ul>
 								</div>
 							</div>
 							<div class="content">
-								<h2 class="title"><a href="{{ route('home.index', ['products-7', $product['id']]) }}">{{ $product['title'] }}</a></h2>
+								<h2 class="title"><a href="{{ route('home.index', ['products', $product['id']]) }}">{{ $product['title'] }}</a></h2>
 							</div>
 						</div>
 					</div>

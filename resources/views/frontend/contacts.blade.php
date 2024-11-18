@@ -2,12 +2,13 @@
 @section('content')
 	@include('layouts.frontend.breadcrumb')
 	<section class="contact-area section-padding">
-		<div class="container">
+		<div class="container" onclick="showToast()">
 			<div class="row">
 				<div class="col-lg-8 align-self-center">
 					<div class="contact-form">
 						<h2>Get In Touch</h2>
-						<form id="contact-form" action="https://www.preetheme.com/html/bhouse/mail.php" method="POST">
+						<form id="contact-form" action="{{ route("messages.store") }}" method="POST">
+							@csrf
 							<div class="row">
 								<div class="col-md-6">
 									<div class="single-input">
@@ -23,7 +24,7 @@
 								</div>
 								<div class="col-md-6">
 									<div class="single-input">
-										<input type="text" required="required" name="phone" placeholder="Your Phone">
+										<input type="number" required="required" name="contact" placeholder="Your Phone">
 										<i class="fas fa-mobile-alt"></i>
 									</div>
 								</div>
@@ -110,4 +111,36 @@
 			</div>
 		</div>
 	</section>
+@endsection
+@section('script')
+<script>
+	toastr.options = {
+		"closeButton": false,
+		"debug": false,
+		"newestOnTop": false,
+		"progressBar": true,
+		"positionClass": "toast-top-right",
+		"preventDuplicates": false,
+		"onclick": null,
+		"showDuration": "300",
+		"hideDuration": "1000",
+		"timeOut": "3000",
+		"extendedTimeOut": "1000",
+		"showEasingCommand": "swing",
+		"hideEasing": "linear",
+		"showMethod": "fadeIn",
+		"hideMethod": "fadeOut"
+	}
+	@if(session('alert'))
+		if("{{ session('alert')['messageType'] == 'success' }}"){
+			toastr.success("{{ session('alert')['message'] }}", "Success!");
+		}
+		if("{{ session('alert')['messageType'] == 'warning' }}"){
+			toastr.warning("{{ session('alert')['message'] }}", "Warning!");
+		}
+	
+// {{-- 'alert',['messageType'=>'warning','message'=>'Data Updated Successfully!'] --}}
+       
+    @endif
+</script>
 @endsection

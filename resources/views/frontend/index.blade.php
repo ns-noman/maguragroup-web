@@ -214,9 +214,9 @@
                         <div class="info-box">
                             <div class="icon">{!! $serviceType['icon'] !!}</div>
                             <div class="content">
-                                <h2><a href="{{ route('home.index', ['services-6', $serviceType['id']]) }}">{{ $serviceType['title'] }}</a></h2>
+                                <h2><a href="{{ route('home.index', ['services', $serviceType['id']]) }}">{{ $serviceType['title'] }}</a></h2>
                                 <p style="height: 120px;">{{ $serviceType['description'] }}</p>
-                                <a class="get_link" href="{{ route('home.index', ['services-6', $serviceType['id']]) }}">View Details <i class="bi bi-arrow-right"></i></a>
+                                <a class="get_link" href="{{ route('home.index', ['services', $serviceType['id']]) }}">View Details <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -242,17 +242,17 @@
                     @foreach($data['products'] as $key => $product)
                         <div class="product-item">
                             <div class="thumbnail">
-                                <a href="{{ route('home.index', ['products-7', $product['id']]) }}">
+                                <a href="{{ route('home.index', ['products', $product['id']]) }}">
                                     <img style="height: 255.75px;" src="{{ asset("public/uploads/products/". $product['image']) }}" alt="img">
                                 </a>
                                 <div class="product-overly">
                                     <ul>
-                                        <li><a href="{{ route('home.index', ['products-7', $product['id']]) }}" title="Views:2021"><i class="bi bi-eye"></i></a></li>
+                                        <li><a href="{{ route('home.index', ['products', $product['id']]) }}" title="Views:2021"><i class="bi bi-eye"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="content">
-                                <h2 class="title"><a href="{{ route('home.index', ['products-7', $product['id']]) }}">{{ $product['title'] }}</a></h2>
+                                <h2 class="title"><a href="{{ route('home.index', ['products', $product['id']]) }}">{{ $product['title'] }}</a></h2>
                             </div>
                         </div>
                     @endforeach
@@ -384,7 +384,7 @@
 					<div class="col-lg-4 col-md-6 mb-30">
 						<div class="blog-item">
 							<div class="thumnail">
-								<a href="{{ route('home.index', ['blogs-10', $blog['id']]) }}">
+								<a href="{{ route('home.index', ['blogs', $blog['id']]) }}">
 									<img style="width: 387px; height: 259px" src="{{ asset("public/uploads/blogs/". $blog['image']) }}" alt="{{ $blog['alt'] }}">
 								</a>
 							</div>
@@ -403,7 +403,7 @@
 									<a href="#"><i class="fas fa-user"></i> {{ $blog['admin']['name'] }}</a>
 									<a href="#"><i class="fas fa-tags"></i> {{ $blog['blogcategory']['title'] }}</a>
 								</div>
-								<h3><a href="{{ route('home.index', ['blogs-10', $blog['id']]) }}">{{ Str::limit($blog['title'], 50, '...') }}</a></h3>
+								<h3><a href="{{ route('home.index', ['blogs', $blog['id']]) }}">{{ Str::limit($blog['title'], 50, '...') }}</a></h3>
 								<p>{{ Str::limit($blog['short_description'], 120, '...') }}</p>
 							</div>
 						</div>

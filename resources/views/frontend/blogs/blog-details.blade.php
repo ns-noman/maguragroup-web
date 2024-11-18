@@ -37,7 +37,7 @@
 							@foreach ($data['recentBlogs'] as $recentBlog)
 								<div class="item mb-20">
 									<div class="thubnail">
-										<a href="{{ route('home.index', ['blogs-10', $recentBlog['id']]) }}">
+										<a href="{{ route('home.index', ['blogs', $recentBlog['id']]) }}">
 											<img src="{{ asset("public/uploads/blogs/". $recentBlog['image']) }}" alt="blog">
 										</a>
 									</div>
@@ -48,7 +48,7 @@
 										$year = $date->year;
 									@endphp
 									<div class="content">
-										<h4><a href="{{ route('home.index', ['blogs-10', $recentBlog['id']]) }}">{{ $recentBlog['title'] }}</a></h4>
+										<h4><a href="{{ route('home.index', ['blogs', $recentBlog['id']]) }}">{{ $recentBlog['title'] }}</a></h4>
 										<span>{{ $day }} {{ $month }} {{ $year }}</span>
 									</div>
 								</div>
