@@ -13,3 +13,4 @@
 <link rel="stylesheet" href="{{ asset('public/frontend-assets') }}/css/normalize.css">
 <link rel="stylesheet" href="{{ asset('public/frontend-assets') }}/css/style.css">
 <link rel="stylesheet" href="{{ asset('public/frontend-assets') }}/css/responsive.css">
+<link rel="stylesheet" href="{{ asset('public/frontend-assets') }}/plugins/toastr/toastr.min.css">
