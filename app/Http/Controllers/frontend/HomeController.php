@@ -30,6 +30,7 @@ class HomeController extends Controller
         if($menuID == 2){
         } else if($menuID == 3 || $menuID == 4){
             $view = 'corporate-profile';
+            $data['basicInfo'] = BasicInfo::select(['video_embed_3'])->first()->toArray();
         } else if($menuID == 5){
             $view = 'mvv';
         } else if($menuID == 6){
@@ -81,7 +82,7 @@ class HomeController extends Controller
         } else{
             $view = 'index';
             $data['sliders'] = Slider::where(['status'=>1, 'company_id'=>0])->select(['id', 'title', 'description', 'image', 'alt'])->orderBy('srln')->get()->toArray();
-            $data['basicInfo'] = BasicInfo::select(['assets_value','total_employees','total_companies','start_year','map_embed','video_embed_1','video_embed_2','video_embed_3'])->first()->toArray();
+            $data['basicInfo'] = BasicInfo::select(['assets_value','total_employees','total_companies','start_year','map_embed','video_embed_1','video_embed_2'])->first()->toArray();
             $data['serviceTypes'] = ServiceType::where(['is_in_home'=> 1, 'status'=> 1])->select(['id', 'title','description','icon',])->orderBy('id')->get()->toArray();
             $data['products'] = Product::where(['is_in_home'=> 1, 'status'=> 1])->select(['id', 'title','description','image','alt'])->orderBy('pn')->get()->toArray();
             $data['companies'] = Company::where(['is_in_home'=> 1, 'status'=> 1])->select(['id', 'title','description','logo','alt','site_link'])->orderBy('pn')->get()->toArray();

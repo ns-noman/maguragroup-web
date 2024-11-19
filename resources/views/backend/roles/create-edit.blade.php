@@ -16,13 +16,14 @@
                                     @method('put')
                                 @endif
                                 <div class="card-body">
-                                    <div class="form-group">
-                                        <label for="role">Role Name</label>
-                                        <input value="{{ isset($data['items']) ? $data['items']->role : null }}" type="text" class="form-control" id="role" placeholder="Role Name" name="role" required>
-                                    </div>
-                                    <div class="row mb-2">
-                                        <div class="col-12">
-                                            <button type="button" id="toggle-select" class="btn btn-secondary">Select All</button>
+                                    <div class="row">
+                                        <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                                            <label for="role">Role Name *</label>
+                                            <input value="{{ isset($data['items']) ? $data['items']->role : null }}" type="text" class="form-control" id="role" placeholder="Role Name" name="role" required>
+                                        </div>
+                                        <div class="form-group col-sm-2 col-md-2 col-lg-2">
+                                            <label for="toggle-select">&nbsp;</label>
+                                            <button type="button" id="toggle-select" class="form-control btn btn-info">Select All</button>
                                         </div>
                                     </div>
                                     <div class="row">

@@ -47,7 +47,7 @@
 				@endforeach
 			</div>
 			<!-- Pagination -->
-			<div class="row mt-10 mb-30 text-center">
+			{{-- <div class="row mt-10 mb-30 text-center">
 				<div class="col-lg-12">
 					<div class="bhouse_pagination">
 						<ul>
@@ -60,7 +60,7 @@
 						</ul>
 					</div>
 				</div>
-			</div>
+			</div> --}}
 		</div>
 	</section>
 

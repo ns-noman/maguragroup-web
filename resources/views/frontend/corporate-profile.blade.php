@@ -9,11 +9,12 @@
 						<img src="{{ asset("public/frontend-assets/img/corporate-profile.jpg") }}" alt="img">
 						<div class="about-vedio">
 							<div class="video-btn">
-								<a data-rel="lightcase" href="https://www.youtube.com/embed/F0CPDjK5RVs?autoplay=1"><i class="fas fa-play"></i></a>
+								<a data-rel="lightcase" href="{{ $data['basicInfo']['video_embed_3'] }}"><i class="fas fa-play"></i></a>
 							</div>
 						</div>
 					</div>
 				</div>
+
 				<div class="col-lg-6 align-self-center">
 					<div class="about-content">
 						<h4 class="sc_subtitle"><span>Corporate Profile</span></h4>

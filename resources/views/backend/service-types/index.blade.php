@@ -1,6 +1,5 @@
 @extends('layouts.admin.master')
 @section('content')
-
     <div class="content-wrapper">
         @include('layouts.admin.content-header')
         <section class="content">

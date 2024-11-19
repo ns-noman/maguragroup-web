@@ -138,9 +138,6 @@
 		if("{{ session('alert')['messageType'] == 'warning' }}"){
 			toastr.warning("{{ session('alert')['message'] }}", "Warning!");
 		}
-	
-// {{-- 'alert',['messageType'=>'warning','message'=>'Data Updated Successfully!'] --}}
-       
     @endif
 </script>
 @endsection

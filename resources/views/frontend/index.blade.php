@@ -100,8 +100,9 @@
 						<img src="{{ asset('public/frontend-assets/img/basic/home-side.png') }}" alt="img">
 						<div class="about-vedio">
 							<div class="video-btn">
-								<a data-rel="lightcase" href="https://www.youtube.com/embed/F0CPDjK5RVs?autoplay=1"><i
-										class="fas fa-play"></i></a>
+								<a data-rel="lightcase" href="{{ $data['basicInfo']['video_embed_1'] }}">
+									<i class="fas fa-play"></i>
+								</a>
 							</div>
 						</div>	
 					</div>
@@ -111,14 +112,10 @@
 						<h4 class="sc_subtitle"><span>Welcome</span></h4>
 						<h2 class="sc_title">WELCOME TO MAGURA 	GROUP</h2>
 						<p>With a legacy of over 25 years, Magura Group has evolved into a diverse enterprise, serving Bangladesh through its trusted ventures in food, clothing, housing, education, and healthcare. Known for its quality products and fair pricing, the Group has built a strong reputation, reflecting its commitment to enhancing lives across multiple sectors.</p>
-
-<p>Magura Group has shown its adaptability by embracing technology, establishing Bangladesh Advanced Technologies Ltd. to support the nation’s digital transformation and keep pace with global advancements. This innovative outlook underscores the Group's understanding of modern demands and its proactive approach to meeting them.</p>
-
-<p>Beyond business success, Magura Group plays a key role in Bangladesh's economic development by creating jobs, investing in local industries, and fostering export-driven growth. Each branch of the Group operates with a mission to uplift communities, contribute to the economy, and support a better quality of life for people across the nation.</p>
-
-<p>As Magura Group looks to the future, it carries forward a sense of optimism, aiming to deepen its social commitment to the people and progress of Bangladesh. Their pledge is clear: to continue growing while staying rooted in their core values of integrity, innovation, and social responsibility.</p>
-
-						<a class="button-1" href="about.html">About Us</a>
+						<p>Magura Group has shown its adaptability by embracing technology, establishing Bangladesh Advanced Technologies Ltd. to support the nation’s digital transformation and keep pace with global advancements. This innovative outlook underscores the Group's understanding of modern demands and its proactive approach to meeting them.</p>
+						<p>Beyond business success, Magura Group plays a key role in Bangladesh's economic development by creating jobs, investing in local industries, and fostering export-driven growth. Each branch of the Group operates with a mission to uplift communities, contribute to the economy, and support a better quality of life for people across the nation.</p>
+						<p>As Magura Group looks to the future, it carries forward a sense of optimism, aiming to deepen its social commitment to the people and progress of Bangladesh. Their pledge is clear: to continue growing while staying rooted in their core values of integrity, innovation, and social responsibility.</p>
+						<a class="button-1" href="{{ route('home.index', ['corporate-profiles']) }}">About Us</a>
 					</div>
 				</div>
 			</div>
@@ -270,7 +267,7 @@
 				<div class="col-lg-12">
 					<div class="vedio-popup-btn">
 						<div class="video-btn">
-							<a data-rel="lightcase" href="https://www.youtube.com/embed/KzWmwOLm_0g?autoplay=1"><i class="fas fa-play"></i></a>
+							<a data-rel="lightcase" href="{{ $data['basicInfo']['video_embed_2'] }}"><i class="fas fa-play"></i></a>
 						</div>
 					</div>
 				</div>

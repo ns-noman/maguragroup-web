@@ -3,7 +3,6 @@
     $content = $data['breadcrumb'] ?? $default;
 @endphp
 <div class="content-header">
-    @include('layouts.admin.flash-message')
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">

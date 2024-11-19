@@ -23,20 +23,38 @@
 <!-- DataTables  & Plugins -->
 <script src="{{ asset('public/admin-assets') }}/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="{{ asset('public/admin-assets') }}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-
-
-{{-- <script src="{{ asset('public/admin-assets') }}/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="{{ asset('public/admin-assets') }}/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="{{ asset('public/admin-assets') }}/plugins/jszip/jszip.min.js"></script>
-<script src="{{ asset('public/admin-assets') }}/plugins/pdfmake/pdfmake.min.js"></script>
-<script src="{{ asset('public/admin-assets') }}/plugins/pdfmake/vfs_fonts.js"></script> --}}
-
-{{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css"> --}}
-{{-- <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script> --}}
-
-
+<script src="{{ asset('public/admin-assets') }}/plugins/toastr/toastr.min.js"></script>
 <!-- Select2 -->
 <script src="{{ asset('public/admin-assets') }}/plugins/select2/js/select2.full.min.js"></script>
+
+<script>
+	toastr.options = {
+		"closeButton": false,
+		"debug": false,
+		"newestOnTop": false,
+		"progressBar": true,
+		"positionClass": "toast-top-right",
+		"preventDuplicates": false,
+		"onclick": null,
+		"showDuration": "300",
+		"hideDuration": "1000",
+		"timeOut": "3000",
+		"extendedTimeOut": "1000",
+		"showEasingCommand": "swing",
+		"hideEasing": "linear",
+		"showMethod": "fadeIn",
+		"hideMethod": "fadeOut"
+	}
+	@if(session('alert'))
+		if("{{ session('alert')['messageType'] == 'success' }}"){
+			toastr.success("{{ session('alert')['message'] }}", "Success!");
+		}
+		if("{{ session('alert')['messageType'] == 'warning' }}"){
+			toastr.warning("{{ session('alert')['message'] }}", "Warning!");
+		}
+    @endif
+</script>
+
 
 <script>
     $(document).ready(function(){
