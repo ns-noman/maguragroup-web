@@ -164,6 +164,9 @@ Route::prefix('backend')->group(function () {
 });
 
 route::namespace('App\Http\Controllers\frontend')->group(function(){
+    Route::prefix('search')->controller(SearchFEController::class)->group(function(){
+        Route::get('/{q?}','index')->name('search.index');
+    });
     Route::controller(HomeController::class)->group(function(){
         Route::get('/{slug?}/{id?}','index')->name('home.index');
     });

@@ -67,8 +67,8 @@
                             </div>
                             <div class="header-top-search-form">
                                 <div class="header-top-search-form-full">
-                                    <form action="#">
-                                        <input type="search" name="search" placeholder="Search Here..">
+                                    <form action="{{ route('search.index') }}">
+                                        <input type="search" name="q" placeholder="Search Here..">
                                         <button type="submit"><i class="bi bi-search"></i></button>
                                     </form>
                                 </div>
