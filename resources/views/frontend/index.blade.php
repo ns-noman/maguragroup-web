@@ -97,7 +97,7 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="about-img">
-						<img src="{{ asset('public/frontend-assets/img/basic/home-side.png') }}" alt="img">
+						<img src="{{ asset('public/frontend-assets/img/corporate-profile.jpg') }}" alt="img">
 						<div class="about-vedio">
 							<div class="video-btn">
 								<a data-rel="lightcase" href="{{ $data['basicInfo']['video_embed_1'] }}">
@@ -124,7 +124,7 @@
 	<!-- End About Area -->
     
 	<!-- Start Counter Area -->
-	<section class="section-padding-2 counter-area" style="background-image:url({{ asset('public/frontend-assets/img/basic/bg-1.png') }});">
+	<section class="section-padding-2 counter-area" style="background-image:url({{ asset('public/frontend-assets/img/bg-1.png') }});">
 		<div class="container">
 			<div class="row">
 				<!-- Single -->
@@ -261,7 +261,7 @@
 
 
 	<!-- Start Video Popup Area -->
-	<div class="vedio-popup-area" style="background-image:url({{ asset('public/frontend-assets/img/basic/mg-headoffice.jpg') }});">
+	<div class="vedio-popup-area" style="background-image:url({{ asset('public/frontend-assets/img/mg-headoffice.jpg') }});">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">

@@ -10,7 +10,8 @@ class SearchFEController extends Controller
 {
     public function index($q=null)
     {
-        return view('frontend.search');
+        $data['breadcrumb'] = ['title'=> 'Search'];
+        return view('frontend.search',compact('data'));
     }
 }
 
