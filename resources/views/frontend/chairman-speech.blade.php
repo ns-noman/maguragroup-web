@@ -3,15 +3,15 @@
 	@include('layouts.frontend.breadcrumb')
 	<section class="about-area section-padding">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-4">
+			<div class="row"  style="text-align: justify;">
+				<div class="col-lg-3">
 					<div class="about-img">
 						<img src="{{ asset("public/frontend-assets/img/president.png") }}" alt="img" class="border border-secondary border-3">
-						<h2>Mustafa Kamal Mohiuddin</h2>
-						<h4>Chairman</h4>
+						<h4>Mustafa Kamal Mohiuddin</h4>
+						<h5>Chairman</h5>
 					</div>
 				</div>
-				<div class="col-lg-8 align-self-center">
+				<div class="col-lg-9 align-self-center">
 					<div class="about-content">
 						<h4 class="sc_subtitle"><span>Chairman Speech</span></h4>
 						<h2 class="sc_title"></h2>
@@ -20,14 +20,17 @@
 						<p>Since inception we are contributing significantly to the national economy through effective utilization of indigenous resources for production and marketing of quality products at a competitive price and are thereby creating scope for employment.</p>
 					</div>
 				</div>
+				<div class="col-lg-12">
+					<p>The members of Magura Group are dedicated to achieve their goals through all out efforts and excellent team spirit. I sincerely hope to join with our prospective friend in addition to existing ones, both domestic as well as overseas, to have closer cooperation for making a better tomorrow. We will be continuing our efforts to improve the performance and thereby enhance our contribution towards the socio-economic upliftment of Bangladesh.</p>
+				</div>
 			</div>
-			<div class="row">
+			{{-- <div class="row">
 				<div class="col-lg-12">
 					<div class="about-content">
 						<p>The members of Magura Group are dedicated to achieve their goals through all out efforts and excellent team spirit. I sincerely hope to join with our prospective friend in addition to existing ones, both domestic as well as overseas, to have closer cooperation for making a better tomorrow. We will be continuing our efforts to improve the performance and thereby enhance our contribution towards the socio-economic upliftment of Bangladesh.</p>
 					</div>
 				</div>
-			</div>
+			</div> --}}
 		</div>
 	</section>
 @endsection

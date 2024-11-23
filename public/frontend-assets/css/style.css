@@ -4517,3 +4517,7 @@ ul.prs_lists li span.sqft {
 .header-bottom.mt-30.sticky-header.sticky {
 	margin-top: 0px;
 }
+
+.about-area{
+	text-align: justify;
+}

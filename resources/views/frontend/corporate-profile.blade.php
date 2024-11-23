@@ -18,7 +18,7 @@
 				<div class="col-lg-6 align-self-center">
 					<div class="about-content">
 						<h4 class="sc_subtitle"><span>Corporate Profile</span></h4>
-						<h2 class="sc_title">Corporate Profile.</h2>
+						{{-- <h2 class="sc_title">Corporate Profile.</h2> --}}
 						<p>While diversification and expanding its capacity, has no doubt been lucrative moves for the Magura Group, the management has much more in mind than just making profit.</p>
 						<p>Magura Group has always held on to the philosophy of doing business that will benefit people. It has been more than 25 years of exploration and hardworking and Magura Group has become a Multilateral Enterprise with its business covering different aspects including food, cloth, housing, education and medicare.</p>
 						<p>The products and services of Magura Group are extremely well-recieived owing to their superb quality and reasonable prices.</p>						

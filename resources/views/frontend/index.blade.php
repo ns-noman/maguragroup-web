@@ -107,10 +107,10 @@
 						</div>	
 					</div>
 				</div>
-				<div class="col-lg-6 align-self-center">
+				<div class="col-lg-6">
 					<div class="about-content">
-						<h4 class="sc_subtitle"><span>Welcome</span></h4>
-						<h2 class="sc_title">WELCOME TO MAGURA 	GROUP</h2>
+						<h4 class="sc_subtitle"><span>WELCOME TO MAGURA 	GROUP</span></h4>
+						{{-- <h2 class="sc_title"></h2> --}}
 						<p>With a legacy of over 25 years, Magura Group has evolved into a diverse enterprise, serving Bangladesh through its trusted ventures in food, clothing, housing, education, and healthcare. Known for its quality products and fair pricing, the Group has built a strong reputation, reflecting its commitment to enhancing lives across multiple sectors.</p>
 						<p>Magura Group has shown its adaptability by embracing technology, establishing Bangladesh Advanced Technologies Ltd. to support the nation’s digital transformation and keep pace with global advancements. This innovative outlook underscores the Group's understanding of modern demands and its proactive approach to meeting them.</p>
 						<p>Beyond business success, Magura Group plays a key role in Bangladesh's economic development by creating jobs, investing in local industries, and fostering export-driven growth. Each branch of the Group operates with a mission to uplift communities, contribute to the economy, and support a better quality of life for people across the nation.</p>
