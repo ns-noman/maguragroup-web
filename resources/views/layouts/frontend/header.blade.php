@@ -79,11 +79,7 @@
                     <div class="menu">
                         <nav>
                             <ul>
-
-
                                 @php
-                                    
-
                                     if(!function_exists('makemenu'))
                                     {
                                         function makemenu($frontendmenus)
@@ -91,13 +87,11 @@
                                             $output = '';
                                             foreach ($frontendmenus as $key => $menu) {
 
-
                                                 $hasChildMenu = $menu['frontendsubmenus'] ? true : false;
                                                 $plusIcon = $hasChildMenu ? 'menu-item-has-children' : '';
                                                 $route = !$hasChildMenu ? route('home.index',[$menu['slug']]) : 'javascript:void(0)';
                                                 $title = $menu['title'];
                                                 $active = request()->path() == $menu['slug'] ? 'active' : '';
-
 
                                                 $output .= "<li class='$plusIcon'>";
                                                 $output .=     "<a class='$active' href='$route' >$title</a>";
@@ -109,19 +103,12 @@
                                                     
                                                 }
                                                 $output .= "</li>";
-
-
-
                                             }
                                             return $output;
                                         }
                                     }
-
                                 @endphp
-
                                 {!! makemenu($frontendmenus) !!}
-
-
                             </ul>
                         </nav>
                     </div>
@@ -142,26 +129,41 @@
                 <a href="javascript:void(0)"><i class="fas fa-times"></i></a>
             </div>
             <div class="mobile-logo">
-                <a href="index.html">
+                <a href="{{ route('home.index') }}">
                     <img src="{{ asset('public/uploads/basic-info/'.$basicInfo->logo) }}" alt="logo">
                 </a>
             </div>
             <div id="menu" class="text-left ">
                 <ul class="offcanvas_main_menu">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li class="menu-item-has-children">
-                        <a href="#">About Us</a>
-                        <ul class="sub-menu">
-                            <li><a href="about.html">Corporate Profile</a></li>
-                            <li><a href="mv-values.html">Mission, Vission & Values</a></li>
-                            <li><a href="services.html">Services</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="shop-grid.html">Products</a></li>
-                    <li><a href="companies.html">Companies</a></li>
-                    <li><a href="chairman-speech.html">Chairman Speech</a></li>
-                    <li><a href="blog-grid.html">Blogs</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+
+                    @php
+                        if(!function_exists('makeMobilemenu'))
+                        {
+                            function makeMobilemenu($frontendmenus)
+                            {
+                                $output = '';
+                                foreach ($frontendmenus as $key => $menu) {
+
+                                    $hasChildMenu = $menu['frontendsubmenus'] ? true : false;
+                                    $plusIcon = $hasChildMenu ? 'menu-item-has-children' : '';
+                                    $route = !$hasChildMenu ? route('home.index',[$menu['slug']]) : 'javascript:void(0)';
+                                    $title = $menu['title'];
+                                    $active = request()->path() == $menu['slug'] ? 'active' : '';
+                                    $output .= "<li class='$plusIcon'>";
+                                    $output .=     "<a class='$active' href='$route' >$title</a>";
+                                    if($hasChildMenu)
+                                    {
+                                        $output .= "<ul class='sub-menu'>";
+                                        $output .=      makeMobilemenu($menu['frontendsubmenus']);
+                                        $output .= "</ul>";
+                                    }
+                                    $output .= "</li>";
+                                }
+                                return $output;
+                            }
+                        }
+                    @endphp
+                    {!! makeMobilemenu($frontendmenus) !!}
                 </ul>
             </div>
         </div>

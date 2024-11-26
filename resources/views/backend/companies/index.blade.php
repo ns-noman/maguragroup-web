@@ -65,16 +65,17 @@
                         { 
                             data: null,
                             searchable: false,
+                            name: 'companies.is_in_home',
                             render: function(data, type, row, meta) {
-                                return `<span class="badge badge-${row.is_in_home ? 'success' : 'warning'}">${row.is_in_home ? 'Yes' : 'No'}</span>`;
+                                return `<span class="badge badge-${row.is_in_home == '1' ? 'success' : 'warning'}">${row.is_in_home ? 'Yes' : 'No'}</span>`;
                             }
                         },
                         { 
                             data: null,
-                            orderable: false, 
-                            searchable: false, 
+                            searchable: false,
+                            name: 'companies.status',
                             render: function(data, type, row, meta) {
-                                return `<span class="badge badge-${row.status ? 'success' : 'warning'}">${row.status ? 'Active' : 'Inactive'}</span>`;
+                                return `<span class="badge badge-${row.status == '1' ? 'success' : 'warning'}">${row.status ? 'Active' : 'Inactive'}</span>`;
                             }
                         },
                         { 

@@ -37,7 +37,7 @@ class HomeController extends Controller
             if($id){
                 $view = 'services.service-details';
                 $data['services'] = Service::where(['service_type_id'=>$id, 'status'=> 1])->select(['id','title','description','image','alt'])->orderBy('pn')->get()->toArray();
-                $data['serviceTypeTitle'] = ServiceType::find($menuID)->title;
+                $data['serviceTypeTitle'] = ServiceType::find($id)->title;
             }else{
                 $view = 'services.services';
                 $data['serviceTypes'] = ServiceType::where(['status'=> 1])->select(['id','title','description','icon',])->orderBy('id')->get()->toArray();

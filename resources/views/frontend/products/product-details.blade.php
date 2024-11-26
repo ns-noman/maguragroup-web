@@ -5,7 +5,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
-					<h4 class="sc_subtitle mb-3"><span>{{ $data['productDetails']['title'] }}</span></h4>
+					<!--<h4 class="sc_subtitle mb-3"><span>{{ $data['productDetails']['title'] }}</span></h4>-->
 					<div class="about-img">
 						<img style="width: 800px!important; height: 400px!important;" src="{{ asset("public/uploads/products/". $data['productDetails']['image']) }}" alt="img">
 					</div>
