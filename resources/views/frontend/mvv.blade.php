@@ -2,42 +2,43 @@
 @section('content')
 	@include('layouts.frontend.breadcrumb')
 	<!-- End Breadcrumb Area -->
-	<style>
-		#value ul li {
-			width: 100%;
-			float: left;
-			line-height: 30px;
-			margin-bottom: 5px;
-			font-size: 16px;
-			font-weight: 500;
-			display: block;
-		}
-	</style>
+
 	<!-- Start About Area -->
-	<section class="about-area section-padding">
+	<section class="about-area mt-5">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6" style="padding-top: 80px;">
+				<div class="col-lg-6">
 					<div class="about-img">
 						<img src="{{ asset("public/frontend-assets/img/mvv.jpg") }}" alt="img" class="border border-secondary border-4">
 					</div>
 				</div>
-				<div class="col-lg-6 align-self-center">
+				<div class="col-lg-6">
 					<div class="about-content">
 						<h4 class="sc_subtitle"><span>Mission , Vision & Values</span></h4>
 						<h2 class="sc_title">Mission</h2>
-						<p>To drive sustainable development and economic growth in Bangladesh through innovation, excellence, and a diverse portfolio of products and services. We are committed to creating value across multiple sectors, including land development, garments, food supply, digital media, e-commerce, online portals, and newspaper publishing, while maintaining the highest standards of quality, safety, and sustainability. By embracing technological advancements and efficient practices, we strive to foster industrial growth, enhance livelihoods, and support the digital transformation of Bangladesh. Through our work in both traditional industries and the digital economy, we aim to contribute to the nation's long-term prosperity, helping to build a brighter, more inclusive, and sustainable future for all.</p>
+						<p>To drive sustainable development and economic growth in Bangladesh through innovation, excellence, and a diverse portfolio of products and services. We are committed to creating value across multiple sectors, including land development, garments, food supply, digital media, e-commerce, online portals, and newspaper publishing, while maintaining the highest standards of quality, safety, and sustainability. By embracing technological advancements and efficient practices, we strive to foster industrial growth, enhance livelihoods, and support the digital transformation of Bangladesh. Through our work in both traditional industries and the digital economy, we aim to contribute to the nation's long-term prosperity, helping to build a brighter, more inclusive, and sustainable future for all.
 					</div>
 				</div>
 			</div>
 			<div class="row mt-2">
-				<div class="col-lg-6 align-self-center">
+				<div class="col-lg-6">
 					<div class="about-content">
 						<h2 class="sc_title">Vision</h2>
-						<p>To become a global leader and benchmark of excellence across every industry we operate in. We aim to redefine standards in garment manufacturing, food production, technology services, pharmaceuticals, and beyond, by driving innovation, efficiency, and sustainability. We envision a future where our brands are synonymous with trust, quality, and resilience—leading the way in adopting cutting-edge technologies and practices that meet the evolving demands of the modern world. In industries such as shipping, logistics, chemical production, API technology, and publishing, we seek to push boundaries, set new trends, and remain at the forefront of progress. Our vision is to not only excel but to pioneer transformative change, inspire industry-wide innovation, and contribute to the well-being of communities and markets, both locally and globally. We are committed to building a lasting legacy of integrity, innovation, and social responsibility for generations to come.</p>
+						<p>To become a global leader and benchmark of excellence across every industry we operate in. We aim to redefine standards in garment manufacturing, food production, technology services, pharmaceuticals, and beyond, by driving innovation, efficiency, and sustainability. We envision a future where our brands are synonymous with trust, quality, and resilience—leading the way in adopting cutting-edge technologies and practices that meet the evolving demands of the modern world. In industries such as shipping, logistics, chemical production, API technology, and publishing, we seek to push boundaries, set new trends, and remain at the forefront of progress. Our vision is to not only excel but to pioneer transformative change, inspire industry-wide innovation, and contribute to the well-being of communities and markets, both locally and globally. We are committed to building a lasting legacy of integrity, innovation, and social responsibility for generations to come.
 					</div>
 				</div>
 				<div class="col-lg-6">
+			    	<style>
+                		#value ul li {
+                			width: 100%;
+                			float: left;
+                			line-height: 20px;
+                			margin-bottom: 10px;
+                			font-size: 16px;
+                			font-weight: 500;
+                			display: block;
+                		}
+                	</style>
 					<div class="about-content" id="value">
 						<h2 class="sc_title">Values</h2>
 						<ul>

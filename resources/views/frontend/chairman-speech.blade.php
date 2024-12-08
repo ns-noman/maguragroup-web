@@ -1,12 +1,32 @@
 @extends('layouts.frontend.master')
 @section('content')
-	@include('layouts.frontend.breadcrumb')
+	@php
+    $default = ['title'=>'Default'];
+    $content = $data['breadcrumb'] ?? $default;
+    @endphp
+    <!--<section class="breadcrumb-area section-padding" style="background-image:url({{ asset("public/frontend-assets/img/breadcrumb.jpg") }});">-->
+    <!--    <div class="container">-->
+    <!--        <div class="row">-->
+    <!--            <div class="col-lg-12">-->
+    <!--                <div class="breadcrumb-content">-->
+    <!--                    <h2>{{ $content['title'] }}</h2>-->
+    <!--                    <ul>-->
+    <!--                        <li><a href="{{ route('home.index') }}">Home</a></li>-->
+    <!--                        <li><i class="fas fa-angle-double-right"></i></li>-->
+    <!--                        <li>{{ $content['title'] }}</li>-->
+    <!--                    </ul>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</section>-->
 	<section class="about-area section-padding">
 		<div class="container">
 			<div class="row"  style="text-align: justify;">
 				<div class="col-lg-3">
 					<div class="about-img">
-						<img src="{{ asset("public/frontend-assets/img/president.png") }}" alt="img" class="border border-secondary border-3">
+						<!--<img src="{{ asset("public/frontend-assets/img/president.png") }}" alt="img" class="border border-secondary border-3">-->
+						<img src="{{ asset("public/frontend-assets/img/Chairman_SR.jpg") }}" alt="img" class="border border-secondary border-3">
 						<h4>Mustafa Kamal Mohiuddin</h4>
 						<h5>Chairman</h5>
 					</div>

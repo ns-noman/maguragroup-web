@@ -3,10 +3,14 @@
 
 	<!-- Start Hero Area -->
 	<style>
-		.section-bg .carousel-inner .carousel-caption h1{
-			font-size: 50px!important;
-			color: #ffffff!important;
-		}
+		.section-bg .carousel-inner .carousel-caption h1 {
+            font-size: 50px !important;
+            color: #fff !important;
+            font-size: 18px;
+            text-shadow: 8px 8px 16px rgba(0, 0, 0, 1); /* Adjust values as needed */
+            font-family: "Times New Roman";
+        }
+
 		.section-bg .carousel-inner .carousel-caption p{
 			font-size: 30px;
 			color: #d4dee4;
@@ -47,8 +51,8 @@
                     <div class="carousel-item {{ $key == 0 ? 'active' : '' }}" data-bs-interval="3000">
                         <img src="{{ asset('public/uploads/sliders/'.$slider['image']) }}" class="d-block" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h1>{{ $slider['title'] }}</h1>
-                            <p>{{ $slider['description'] }}</p>
+                            <!--<h1>{{ $slider['title'] }}</h1>-->
+                            <!--<p>{{ $slider['description'] }}</p>-->
                         </div>
                     </div>
                 @endforeach
@@ -98,13 +102,13 @@
 				<div class="col-lg-6">
 					<div class="about-img">
 						<img src="{{ asset('public/frontend-assets/img/corporate-profile.jpg') }}" alt="img">
-						<div class="about-vedio">
-							<div class="video-btn">
-								<a data-rel="lightcase" href="{{ $data['basicInfo']['video_embed_1'] }}">
-									<i class="fas fa-play"></i>
-								</a>
-							</div>
-						</div>	
+						<!--<div class="about-vedio">-->
+						<!--	<div class="video-btn">-->
+						<!--		<a data-rel="lightcase" href="{{ $data['basicInfo']['video_embed_1'] }}">-->
+						<!--			<i class="fas fa-play"></i>-->
+						<!--		</a>-->
+						<!--	</div>-->
+						<!--</div>	-->
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -341,7 +345,7 @@
 				}
 			</style>
 			<div class="row">
-				<div class="row owl-carousel owl-theme">
+				<div class="owl-carousel owl-theme">
                     @foreach($data['companies'] as $key => $company)
                         <div class="item">
                             <a href="{{ $company['site_link'] }}">

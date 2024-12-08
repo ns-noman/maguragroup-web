@@ -22,7 +22,7 @@
                         <h2>Contact</h2>
                         <p>
                             <i class="fa fa-phone"></i> {{ $basicInfo->telephone }}<br>
-                            <i class="fa fa-fax"></i> {{ $basicInfo->fax }}<br>
+                            <!--<i class="fa fa-fax"></i> {{ $basicInfo->fax }}<br>-->
                             <i class="fa fa-mobile"></i> {{ $basicInfo->phone }}<br>
                             <a style="text-decoration: none; color: inherit; cursor: pointer;" href="mailto:{{ $basicInfo->email }}"><i class="fa fa-envelope"></i> {{ $basicInfo->email }}</a><br>
                             <a style="text-decoration: none; color: inherit; cursor: pointer;" href="{{ $basicInfo->web_link }}"><i class="fa fa-globe"></i> {{ $basicInfo->web_link }}</a><br>

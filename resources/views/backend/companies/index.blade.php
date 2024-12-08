@@ -20,6 +20,7 @@
 
                                         <tr>
                                             <th>SN</th>
+                                            <th>PN</th>
                                             <th>Title</th>
                                             <th>Description</th>
                                             <th>Site Link</th>
@@ -50,6 +51,7 @@
             options.columns = 
                     [
                         { data: null, orderable: false, searchable: false },
+                         { data: 'pn', name: 'companies.pn'},
                         { data: 'title', name: 'companies.title'},
                         { data: 'description', name: 'companies.description'},
                         { data: 'site_link', name: 'companies.site_link'},
@@ -67,7 +69,7 @@
                             searchable: false,
                             name: 'companies.is_in_home',
                             render: function(data, type, row, meta) {
-                                return `<span class="badge badge-${row.is_in_home == '1' ? 'success' : 'warning'}">${row.is_in_home ? 'Yes' : 'No'}</span>`;
+                                return `<span class="badge badge-${row.is_in_home == '1' ? 'success' : 'warning'}">${row.is_in_home == '1' ? 'Yes' : 'No'}</span>`;
                             }
                         },
                         { 
@@ -75,7 +77,7 @@
                             searchable: false,
                             name: 'companies.status',
                             render: function(data, type, row, meta) {
-                                return `<span class="badge badge-${row.status == '1' ? 'success' : 'warning'}">${row.status ? 'Active' : 'Inactive'}</span>`;
+                                return `<span class="badge badge-${row.status == '1' ? 'success' : 'warning'}">${row.status == '1' ? 'Active' : 'Inactive'}</span>`;
                             }
                         },
                         { 

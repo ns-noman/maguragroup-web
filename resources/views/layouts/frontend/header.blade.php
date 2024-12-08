@@ -20,7 +20,7 @@
                     <div class="hl_top-left">
                         <a href="tel:+8801847091084" style="text-decoration: none; color: inherit; cursor: pointer;"><span><i class="bi bi-telephone"></i> {{ $basicInfo->phone }}</span></a>&nbsp;						
                         <a style="text-decoration: none; color: inherit; cursor: pointer;" href="mailto:{{ $basicInfo->email }}"><span><i class="bi bi-envelope"></i> {{ $basicInfo->email }}</span></a>&nbsp;
-                        <a href="https://maps.app.goo.gl/Vu4ChwYeLNPrywR48" target="_blank" style="text-decoration: none; color: inherit; cursor: pointer;"><span><i class="bi bi-geo-alt"></i> {{ $basicInfo->location }}</span></a>
+                        <!--<a href="https://maps.app.goo.gl/Vu4ChwYeLNPrywR48" target="_blank" style="text-decoration: none; color: inherit; cursor: pointer;"><span><i class="bi bi-geo-alt"></i> {{ $basicInfo->location }}</span></a>-->
                     </div>
                 </div>
                 <!-- Top Right -->

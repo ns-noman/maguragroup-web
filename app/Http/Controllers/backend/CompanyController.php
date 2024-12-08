@@ -77,6 +77,7 @@ class CompanyController extends Controller
     public function companies(Request $request)
     {
         $query = Company::query();
+        $query = $query->orderBy('status','Desc');
         if (!$request->has('order')) {
             $query = $query->orderBy('pn');
         }

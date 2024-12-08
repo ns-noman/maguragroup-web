@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="about-img">
-						<img src="{{ asset("public/frontend-assets/img/corporate-profile.jpg") }}" alt="img">
+						<img src="{{ asset("public/frontend-assets/img/corporate-profile-image.jpg") }}" alt="img">
 						<div class="about-vedio">
 							<div class="video-btn">
 								<a data-rel="lightcase" href="{{ $data['basicInfo']['video_embed_3'] }}"><i class="fas fa-play"></i></a>
