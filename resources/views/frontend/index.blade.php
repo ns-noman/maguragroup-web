@@ -347,8 +347,15 @@
 			<div class="row">
 				<div class="owl-carousel owl-theme">
                     @foreach($data['companies'] as $key => $company)
+						@php
+							$target = 'target="_blank"';
+							if (!$company['site_link']) {
+								$company['site_link'] = 'javascript:void(0)';
+								$target = '';
+							}
+						@endphp
                         <div class="item">
-                            <a href="{{ $company['site_link'] }}">
+                            <a {{ $target }} href="{{ $company['site_link'] }}">
                                 <img src="{{ asset("public/uploads/companies/". $company['logo']) }}" alt="">
                                 <h4>{{ $company['title'] }}</h4>
                             </a>

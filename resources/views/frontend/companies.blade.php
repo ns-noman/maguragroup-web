@@ -14,7 +14,7 @@
 				.list-group img {
 					height: 50px;
 					width: 50px;
-					object-fit: cover;
+					/* object-fit: cover; */
 					border-radius: 5px;
 				}
 
@@ -53,12 +53,19 @@
 
 			<div class="row mt-3">
 				@foreach($data['companies'] as $key => $company)
+					@php
+						$target = 'target="_blank"';
+						if (!$company['site_link']) {
+							$company['site_link'] = 'javascript:void(0)';
+							$target = '';
+						}
+					@endphp
 					@if($key == 0 || $key == ceil(count($data['companies']) / 2))
 						<div class="col-md-6">
 							<ul class="list-group">
 					@endif
 								<li class="list-group-item text-white d-flex align-items-center shadow-sm p-3 mb-3">
-									<a href="{{ $company['site_link'] }}" class="d-flex align-items-center text-decoration-none text-white">
+									<a {{ $target }} href="{{ $company['site_link'] }}" class="d-flex align-items-center text-decoration-none text-white">
 										<img src="{{ asset("public/uploads/companies/" . $company['logo']) }}" alt="{{ $company['alt'] }}" class="me-3">
 										<h3>{{ $company['title'] }}</h3>
 									</a>

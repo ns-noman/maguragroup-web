@@ -44,7 +44,8 @@
                 <div class="col-lg-2 col-md-4 align-self-center">
                     <div class="logo py-1">
                         <a href="{{ route('home.index') }}">
-                            <img height="70px" src="{{ asset('public/uploads/basic-info/'.$basicInfo->logo) }}" alt="logo">
+                            {{-- width="auto" height="70px" --}}
+                            <img width="105px" height="60px" src="{{ asset('public/uploads/basic-info/'.$basicInfo->logo) }}" alt="logo">
                         </a>
                     </div>
                 </div>
