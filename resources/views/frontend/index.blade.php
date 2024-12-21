@@ -51,8 +51,8 @@
                     <div class="carousel-item {{ $key == 0 ? 'active' : '' }}" data-bs-interval="3000">
                         <img src="{{ asset('public/uploads/sliders/'.$slider['image']) }}" class="d-block" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <!--<h1>{{ $slider['title'] }}</h1>-->
-                            <!--<p>{{ $slider['description'] }}</p>-->
+                            <h1>{{ $slider['title'] }}</h1>
+                            <p>{{ $slider['description'] }}</p>
                         </div>
                     </div>
                 @endforeach
