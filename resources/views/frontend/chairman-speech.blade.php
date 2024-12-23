@@ -4,28 +4,11 @@
     $default = ['title'=>'Default'];
     $content = $data['breadcrumb'] ?? $default;
     @endphp
-    <!--<section class="breadcrumb-area section-padding" style="background-image:url({{ asset("public/frontend-assets/img/breadcrumb.jpg") }});">-->
-    <!--    <div class="container">-->
-    <!--        <div class="row">-->
-    <!--            <div class="col-lg-12">-->
-    <!--                <div class="breadcrumb-content">-->
-    <!--                    <h2>{{ $content['title'] }}</h2>-->
-    <!--                    <ul>-->
-    <!--                        <li><a href="{{ route('home.index') }}">Home</a></li>-->
-    <!--                        <li><i class="fas fa-angle-double-right"></i></li>-->
-    <!--                        <li>{{ $content['title'] }}</li>-->
-    <!--                    </ul>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </div>-->
-    <!--</section>-->
 	<section class="about-area section-padding section-bg">
 		<div class="container">
 			<div class="row"  style="text-align: justify;">
 				<div class="col-lg-3">
 					<div class="about-img">
-						<!--<img src="{{ asset("public/frontend-assets/img/president.png") }}" alt="img" class="border border-secondary border-3">-->
 						<img src="{{ asset("public/frontend-assets/img/Chairman_SR.jpg") }}" alt="img" class="border border-secondary border-3">
 						<h4>Mustafa Kamal Mohiuddin</h4>
 						<h5>Chairman</h5>
@@ -35,22 +18,15 @@
 					<div class="about-content">
 						<h4 class="sc_subtitle"><span>Chairman Speech</span></h4>
 						<h2 class="sc_title"></h2>
-						<p>The emergence of Magura Group as a Conglomerate is the result of combined efforts for over the past two and a half decade. The Group is working with the vision to ensure welfare for the people through better social services. To this aim, the Group is being thoroughly involved in multi dimensional activities, related to satisfying the basic needs of human expectation.</p>
-						<p>Adaptability, versatility, reliability and capability are the ideals of Magura Group, which are being successfully followed in all our business units. Over the years, we have extended our business activities in different dimensions and have been able to emerge as a promoter of business houses and industrial enterprises with the support of highly capable professionals.</p>
-						<p>Since inception we are contributing significantly to the national economy through effective utilization of indigenous resources for production and marketing of quality products at a competitive price and are thereby creating scope for employment.</p>
+						<p>Magura Group has proudly spent over three and a half decades on its journey to becoming a leading conglomerate, driven by a vision to contribute to the betterment of society through exceptional services. Our goal has always been to meet the core needs of people, fulfilling their expectations through a broad spectrum of impactful initiatives.</p>
+						<p>At the heart of Magura Group’s success are our core values: adaptability, versatility, reliability, and capability. These principles have guided us in navigating and excelling across various industries. With the dedication of our talented professionals, we have not only expanded our reach but also played a pivotal role in fostering business growth and industrial innovation.</p>
+						<p>For over thirty-five years, Magura Group has made significant contributions to Bangladesh's economy by utilizing local resources efficiently. Through the production and marketing of high-quality products at competitive prices, we have generated substantial employment opportunities and driven sustainable growth.</p>
 					</div>
 				</div>
 				<div class="col-lg-12">
-					<p>The members of Magura Group are dedicated to achieve their goals through all out efforts and excellent team spirit. I sincerely hope to join with our prospective friend in addition to existing ones, both domestic as well as overseas, to have closer cooperation for making a better tomorrow. We will be continuing our efforts to improve the performance and thereby enhance our contribution towards the socio-economic upliftment of Bangladesh.</p>
+					<p>The team at Magura Group remains committed to achieving our goals through relentless effort, strong collaboration, and a shared commitment to excellence. Looking ahead, we are excited about forging new partnerships, both locally and internationally, to help build a prosperous future. We will continue to enhance our performance and deepen our contributions to the socio-economic development of Bangladesh.</p>
 				</div>
 			</div>
-			{{-- <div class="row">
-				<div class="col-lg-12">
-					<div class="about-content">
-						<p>The members of Magura Group are dedicated to achieve their goals through all out efforts and excellent team spirit. I sincerely hope to join with our prospective friend in addition to existing ones, both domestic as well as overseas, to have closer cooperation for making a better tomorrow. We will be continuing our efforts to improve the performance and thereby enhance our contribution towards the socio-economic upliftment of Bangladesh.</p>
-					</div>
-				</div>
-			</div> --}}
 		</div>
 	</section>
 @endsection

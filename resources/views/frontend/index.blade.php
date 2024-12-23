@@ -16,19 +16,12 @@
 			text-align: center;
         }
 		.section-bg .carousel-inner .carousel-caption h1 {
-			/* color: #0083cb; */
 			color: #2E3190;
 			display: inline-block;
 			font-size: 60px;
 			margin-bottom: 7px;
 			text-transform: uppercase;
 			font-weight: 500;
-            /* font-size: 50px !important;
-            color: #0083cb !important;
-            font-size: 18px;
-            text-shadow: 4px 4px 16px rgba(0, 0, 0, 1);
-            font-family: "Times New Roman";
-			*/
         }
 
 		.section-bg .carousel-inner .carousel-caption p{
@@ -37,20 +30,20 @@
 		}
 		.section-bg .carousel-inner .carousel-caption {
 			left: 50%; 
-			transform: translate(-50%, 0); /* Center horizontally */
+			transform: translate(-50%, 0);
 			bottom: 20px;
 			font-size: 1.5rem;
-			opacity: 0; /* Start with hidden */
+			opacity: 0;
 			transition: opacity 0.5s ease, transform 0.5s ease;
 		}
 	
 		.section-bg .carousel-inner .carousel-caption.show {
-			opacity: 1; /* Show when active */
-			transform: translate(-50%, 0); /* No movement */
+			opacity: 1;
+			transform: translate(-50%, 0);
 		}
 	
 		.section-bg .carousel-inner .carousel-item {
-			position: relative; /* Ensure item is positioned */
+			position: relative;
 		}
 	
 		.section-bg .carousel-inner .carousel-item img {
@@ -58,15 +51,6 @@
 			height: auto;
 		}
 	</style>
-
-{{-- .caption h1 {
-    color: #0083cb;
-    display: inline-block;
-    font-size: 60px;
-    margin-bottom: 7px;
-    text-transform: uppercase;
-    font-weight: 500;
-} --}}
 	
 	<section class="section-bg">
 		<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">

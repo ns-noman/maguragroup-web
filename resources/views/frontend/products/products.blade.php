@@ -4,22 +4,22 @@
 	$default = ['title'=>'Default'];
 	$content = $data['breadcrumb'] ?? $default;
 	@endphp
-	<section class="breadcrumb-area" style=" padding: 30px;background-image:url({{ asset("public/frontend-assets/img/product-list-banner.png") }});">
+	{{-- <section class="breadcrumb-area" style=" padding: 30px;background-image:url({{ asset("public/frontend-assets/img/product-list-banner.png") }});">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12" style="padding: 90px 0px 90px 0px">
-					{{-- <div class="breadcrumb-content">
+					<div class="breadcrumb-content">
 						<h2>{{ $content['title'] }}</h2>
 						<ul>
 							<li><a href="{{ route('home.index') }}">Home</a></li>
 							<li><i class="fas fa-angle-double-right"></i></li>
 							<li>{{ $content['title'] }}</li>
 						</ul>
-					</div> --}}
+					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> --}}
 	<section class="section-bg">
 		<div class="container">
 			<div class="row pt-4 mb-4">

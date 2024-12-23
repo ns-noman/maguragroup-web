@@ -95,7 +95,7 @@
 								</div>
 								<div class="content">
 									<h4>Call Us</h4>
-									<p>{{ $data['basicInfo']['fax'] }}</p>
+									{{-- <p>{{ $data['basicInfo']['fax'] }}</p> --}}
 									<p>{{ $data['basicInfo']['phone'] }}</p>
 								</div>
 							</div>
