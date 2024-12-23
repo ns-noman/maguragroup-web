@@ -3,12 +3,32 @@
 
 	<!-- Start Hero Area -->
 	<style>
+		.section-bg .carousel-inner .carousel-caption {
+			background-color: rgba(255, 255, 255, 0.57);
+			padding-left: 20px;
+			padding-right: 20px;
+			width: 48%;
+			left: 11%;
+			position: absolute;
+			top: 41%;
+			transform: translateY(-50%);
+			z-index: 99;
+			text-align: center;
+        }
 		.section-bg .carousel-inner .carousel-caption h1 {
-            font-size: 50px !important;
-            color: #fff !important;
+			/* color: #0083cb; */
+			color: #2E3190;
+			display: inline-block;
+			font-size: 60px;
+			margin-bottom: 7px;
+			text-transform: uppercase;
+			font-weight: 500;
+            /* font-size: 50px !important;
+            color: #0083cb !important;
             font-size: 18px;
-            text-shadow: 8px 8px 16px rgba(0, 0, 0, 1); /* Adjust values as needed */
+            text-shadow: 4px 4px 16px rgba(0, 0, 0, 1);
             font-family: "Times New Roman";
+			*/
         }
 
 		.section-bg .carousel-inner .carousel-caption p{
@@ -38,6 +58,15 @@
 			height: auto;
 		}
 	</style>
+
+{{-- .caption h1 {
+    color: #0083cb;
+    display: inline-block;
+    font-size: 60px;
+    margin-bottom: 7px;
+    text-transform: uppercase;
+    font-weight: 500;
+} --}}
 	
 	<section class="section-bg">
 		<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
@@ -50,10 +79,12 @@
                 @foreach($data['sliders'] as $key => $slider)
                     <div class="carousel-item {{ $key == 0 ? 'active' : '' }}" data-bs-interval="3000">
                         <img src="{{ asset('public/uploads/sliders/'.$slider['image']) }}" class="d-block" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h1>{{ $slider['title'] }}</h1>
-                            <p>{{ $slider['description'] }}</p>
-                        </div>
+                        @if($slider['title'] || $slider['description'])
+							<div class="carousel-caption d-flex justify-content-center align-items-center" style="margin-bottom: 100px;">
+								<h1>{{ $slider['title'] }}</h1>
+								<p>{{ $slider['description'] }}</p>
+							</div>
+						@endif
                     </div>
                 @endforeach
 			</div>

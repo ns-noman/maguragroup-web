@@ -72,20 +72,58 @@ $content = $data['breadcrumb'] ?? $default;
 				@endforeach
 			</div>
 			<!-- Pagination -->
-			{{-- <div class="row mt-10 mb-30 text-center">
+			<div class="row mt-10 mb-30 text-center section-bg">
 				<div class="col-lg-12">
 					<div class="bhouse_pagination">
 						<ul>
-							<li><a href="#"><i class="fas fa-angle-left"></i></a></li>
-							<li><a href="#">1</a></li>
-							<li><span>2</span></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#"><i class="fas fa-angle-right"></i></a></li>
+							{{-- 
+								<li><a href="#"><i class="fas fa-angle-left"></i></a></li>
+								<li><a href="#">1</a></li>
+								<li><span>2</span></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#"><i class="fas fa-angle-right"></i></a></li>
+							 --}}
+
+							{{-- <li class="page-item {{ $data['current_page'] == 1 ? 'disabled' : '' }}">
+                                <a class="page-link" href="{{ $data['current_page'] == 1 ? 'javascript:void(0)' : route('home.index', [$data['date'], 1]) }}">শুরু</a>
+                            </li>
+                            <li class="page-item {{ $data['current_page'] > 1 ? '' : 'disabled' }}">
+                                <a class="page-link" href="{{ $data['current_page'] > 1 ? route('home.index', [$data['date'], $data['current_page'] - 1]) : 'javascript:void(0)' }}">
+                                    {{ 'আগের' }}
+                                </a>
+                            </li>
+                            @php
+                                $start = max(1, $data['current_page'] - 2);
+                                $end = min($data['total_pages'], $data['current_page'] + 2);
+                            @endphp
+            
+                            {!! $start > 1 ? '<li class="page-item disabled"><span class="page-link">...</span></li>' : '' !!}
+            
+                            @for($i = $start; $i <= $end; $i++)
+                                <li class="page-item {{ $i == $data['current_page'] ? 'active' : '' }}">
+                                    <a class="page-link" href="{{ $i != $data['current_page'] ? route('home.index', [$data['date'], $i]) : 'javascript:void(0)' }}">
+                                        {{ $i }}
+                                    </a>
+                                </li>
+                            @endfor
+            
+                            {!! $end < $data['total_pages'] ? '<li class="page-item disabled"><span class="page-link">...</span></li>' : '' !!}
+            
+                            <li class="page-item {{ $data['current_page'] < $data['total_pages'] ? '' : 'disabled' }}">
+                                <a class="page-link" href="{{ $data['current_page'] < $data['total_pages'] ? route('home.index', [$data['date'], $data['current_page'] + 1]) : 'javascript:void(0)' }}">
+                                    {{ 'পরের' }}
+                                </a>
+                            </li>
+            
+                            <li class="page-item {{ $data['current_page'] == $data['total_pages'] ? 'disabled' : '' }}">
+                                <a class="page-link" href="{{ $data['current_page'] == $data['total_pages'] ? 'javascript:void(0)' : route('home.index', [$data['date'], $data['total_pages']]) }}">শেষ</a>
+                            </li> --}}
+
 						</ul>
 					</div>
 				</div>
-			</div> --}}
+			</div>
 		</div>
 	</section>
 
