@@ -3,7 +3,60 @@
 
 	<!-- Start Hero Area -->
 	<style>
+		/* Default styles for desktop */
 		.section-bg .carousel-inner .carousel-caption {
+			background-color: rgba(255, 255, 255, 0.57);
+			padding-left: 20px;
+			padding-right: 20px;
+			width: 48%;
+			left: 11%;
+			position: absolute;
+			top: 41%;
+			transform: translateY(-50%);
+			z-index: 99;
+			text-align: center;
+		}
+
+		.section-bg .carousel-inner .carousel-caption h1 {
+			color: #2E3190;
+			display: inline-block;
+			font-size: 60px;
+			margin-bottom: 7px;
+			text-transform: uppercase;
+			/* font-weight: 500; */
+		}
+
+		/* Tablet view (768px and above) */
+		@media (max-width: 991px) and (min-width: 768px) {
+			.section-bg .carousel-inner .carousel-caption {
+				width: 60%;
+				left: 10%;
+				top: 50%;
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+
+			.section-bg .carousel-inner .carousel-caption h1 {
+				font-size: 45px;
+			}
+		}
+
+		/* Mobile view (below 768px) */
+		@media (max-width: 767px) {
+			.section-bg .carousel-inner .carousel-caption {
+				width: 80%;
+				left: 10%;
+				top: 50%;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+
+			.section-bg .carousel-inner .carousel-caption h1 {
+				font-size: 14px;
+			}
+		}
+
+		/* .section-bg .carousel-inner .carousel-caption {
 			background-color: rgba(255, 255, 255, 0.57);
 			padding-left: 20px;
 			padding-right: 20px;
@@ -22,7 +75,7 @@
 			margin-bottom: 7px;
 			text-transform: uppercase;
 			font-weight: 500;
-        }
+        } */
 
 		.section-bg .carousel-inner .carousel-caption p{
 			font-size: 30px;
@@ -64,7 +117,7 @@
                     <div class="carousel-item {{ $key == 0 ? 'active' : '' }}" data-bs-interval="3000">
                         <img src="{{ asset('public/uploads/sliders/'.$slider['image']) }}" class="d-block" alt="...">
                         @if($slider['title'] || $slider['description'])
-							<div class="carousel-caption d-flex justify-content-center align-items-center" style="margin-bottom: 100px;">
+							<div class="carousel-caption d-flex justify-content-center align-items-center" style="margin-bottom: 150px;">
 								<h1>{{ $slider['title'] }}</h1>
 								<p>{{ $slider['description'] }}</p>
 							</div>
