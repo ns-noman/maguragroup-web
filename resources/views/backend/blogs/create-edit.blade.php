@@ -30,11 +30,11 @@
                                             <label for="">Blot Title  (max: 50 charcters)*</label>
                                             <input value="{{ isset($data['items']) ? $data['items']->title : null }}" type="text" class="form-control" id="title" placeholder="Blot Title" name="title" required>
                                         </div>
-                                        <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                                        <div class="form-group col-sm-6 col-md-6 col-lg-6">
                                             <label for="short_description">Short Description (max: 120 charcters)*</label>
                                             <textarea cols="30" rows="5" class="form-control" id="short_description" placeholder="Short Description" name="short_description" required>{{ isset($data['items']) ? $data['items']->short_description : null }}</textarea>
                                         </div>
-                                        <div class="form-group col-sm-8 col-md-8 col-lg-8">
+                                        <div class="form-group col-sm-6 col-md-6 col-lg-6">
                                             <label for="description">Description *</label>
                                             <textarea cols="30" rows="5" class="form-control" id="description" placeholder="Description" name="description" required>{{ isset($data['items']) ? $data['items']->description : null }}</textarea>
                                         </div>
@@ -75,4 +75,18 @@
             </div>
         </section>
     </div>
+@endsection
+@section('script')
+<script>
+    $('#short_description').summernote({
+        placeholder: 'Short Description',
+        tabsize: 2,
+        height: 120
+    });
+    $('#description').summernote({
+        placeholder: 'Description',
+        tabsize: 2,
+        height: 120
+    });
+</script>
 @endsection

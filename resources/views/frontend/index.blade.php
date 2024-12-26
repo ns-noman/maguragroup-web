@@ -420,7 +420,7 @@
 									<a href="#"><i class="fas fa-tags"></i> {{ $blog['blogcategory']['title'] }}</a>
 								</div>
 								<h3><a href="{{ route('home.index', ['blogs', $blog['id']]) }}">{{ Str::limit($blog['title'], 50, '...') }}</a></h3>
-								<p>{{ Str::limit($blog['short_description'], 120, '...') }}</p>
+								<p>{!! Str::limit($blog['short_description'], 120, '...') !!}</p>
 							</div>
 						</div>
 					</div>

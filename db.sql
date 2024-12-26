@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 15, 2024 at 11:00 AM
+-- Generation Time: Dec 26, 2024 at 04:23 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -181,13 +181,13 @@ CREATE TABLE `companies` (
 
 INSERT INTO `companies` (`id`, `title`, `description`, `site_link`, `logo`, `alt`, `pn`, `is_in_home`, `status`, `created_by_id`, `updated_by_id`, `created_at`, `updated_at`) VALUES
 (1, 'Magura Recycled Paper Industries Ltd.', NULL, NULL, 'company-1731321563.png', 'Magura Recycled Paper Industries LTD.', 3, 1, 1, 1, NULL, '2024-11-03 08:44:22', '2024-12-02 05:08:17'),
-(2, 'Magura Group PLC', NULL, NULL, 'company-1731321367.jpg', 'Est a officiis culpa', 1, 1, 1, 1, NULL, '2024-11-03 08:51:39', '2024-12-02 05:07:32'),
+(2, 'Magura Group PLC', NULL, 'https://www.maguragroup.com.bd', 'company-1731321367.png', 'Est a officiis culpa', 1, 1, 1, 1, NULL, '2024-11-03 08:51:39', '2024-12-21 04:33:02'),
 (3, 'Kores Composite Textile Mills Ltd.', NULL, NULL, 'company-1731321619.png', 'Kores Composite Textile Miles Limited', 19, 1, 1, 1, NULL, '2024-11-03 08:51:53', '2024-12-02 05:47:56'),
 (4, 'Magura Paper Mills Ltd. Unit-2 Limited', NULL, NULL, 'company-1731321503.png', 'Magura Paper Mills Limited', 2, 1, 1, 1, NULL, '2024-11-07 08:39:23', '2024-12-02 05:08:04'),
-(5, 'Kores (Bangladesh) PLC', NULL, NULL, 'company-1732598526.png', 'Kores ( Bangladesh ) Limited', 18, 1, 1, 1, NULL, '2024-11-07 08:39:47', '2024-12-02 05:47:46'),
+(5, 'Kores (Bangladesh) PLC', NULL, 'https://www.koresbd.com', 'company-1732598526.png', 'Kores ( Bangladesh ) Limited', 18, 1, 1, 1, NULL, '2024-11-07 08:39:47', '2024-12-21 04:34:59'),
 (6, 'Mineral Paper Industries Ltd.', NULL, NULL, 'company-1731321334.png', 'Mineral Paper Industries Limited', 20, 1, 1, 1, NULL, '2024-11-07 08:40:01', '2024-12-02 05:39:35'),
 (7, 'World of Textiles Ltd.', NULL, NULL, 'company-1731321672.png', 'World of Textiles Limited', 21, 1, 1, 1, NULL, '2024-11-07 11:04:17', '2024-12-02 05:40:23'),
-(8, 'Paper Processing & Packaging Limited', NULL, NULL, 'company-1731321728.png', 'Paper Processing & Packaging Limited', 11, 1, 1, 1, NULL, '2024-11-07 11:05:47', '2024-12-02 05:32:41'),
+(8, 'Paper Processing & Packaging Limited', NULL, 'https://www.pppl.com.bd', 'company-1731321728.png', 'Paper Processing & Packaging Limited', 11, 1, 1, 1, NULL, '2024-11-07 11:05:47', '2024-12-21 04:33:43'),
 (9, 'Pearl Paper and Board Mills Ltd.', NULL, NULL, 'company-1731566089.png', 'Pearl Paper and Board Mills Ltd.', 100, 0, 0, 1, NULL, '2024-11-14 06:34:49', '2024-11-23 08:43:13'),
 (10, 'Integrated Social Aid (ISA)', NULL, NULL, 'company-1731566236.png', 'Integrated Social and Legal Aid', 16, 0, 0, 1, NULL, '2024-11-14 06:37:16', '2024-12-02 05:23:34'),
 (11, 'Active World Limited', NULL, NULL, 'company-1731566468.png', 'Active World Limited', 100, 0, 0, 1, NULL, '2024-11-14 06:41:08', '2024-11-23 08:44:47'),
@@ -210,10 +210,10 @@ INSERT INTO `companies` (`id`, `title`, `description`, `site_link`, `logo`, `alt
 (29, 'Magura Chemical Complex Ltd.', NULL, NULL, 'company-1731567726.png', 'Magura Chemical Complex Limited', 6, 1, 1, 1, NULL, '2024-11-14 07:02:06', '2024-12-02 05:09:44'),
 (30, 'Magura Shipping and Logistics Ltd.', NULL, NULL, 'company-1731567768.png', 'Magura Shipping and Logistics Limited', 5, 1, 1, 1, NULL, '2024-11-14 07:02:48', '2024-12-02 05:09:17'),
 (31, 'Magura Engineering Complex Ltd.', NULL, NULL, 'company-1731567796.png', 'Magura Engineering Complex Limited', 4, 1, 1, 1, NULL, '2024-11-14 07:03:16', '2024-12-02 05:08:51'),
-(32, 'Bangladesh Monospool Paper Manufacturing Company Ltd.', NULL, NULL, 'company-1732184129.png', 'Bangladesh Monospool Paper Manufacturing Company Ltd.', 100, 1, 1, 1, NULL, '2024-11-21 10:15:29', '2024-11-21 10:15:29'),
+(32, 'Bangladesh Monospool Paper Manufacturing Company Ltd.', NULL, 'https://www.mpmc.com.bd', 'company-1732184129.png', 'Bangladesh Monospool Paper Manufacturing Company Ltd.', 100, 1, 1, 1, NULL, '2024-11-21 10:15:29', '2024-12-21 04:30:50'),
 (33, 'Magura Multiplex PLC', NULL, NULL, 'company-1732603361.png', 'Magura Multiplex PLC', 100, 1, 1, 1, NULL, '2024-11-23 08:37:55', '2024-11-26 06:42:41'),
-(34, 'Bangladesh Development Group PLC', NULL, NULL, 'company-1732351094.png', 'Bangladesh Development Co. PLC', 100, 0, 0, 1, NULL, '2024-11-23 08:38:14', '2024-11-24 05:07:41'),
-(35, 'Shukran Food PLC', NULL, NULL, 'company-1732351292.png', 'Shukran Food PLC', 100, 0, 0, 1, NULL, '2024-11-23 08:41:32', '2024-11-24 05:07:58'),
+(34, 'Bangladesh Development Group PLC', NULL, 'https://www.bdg.com.bd', 'company-1732351094.png', 'Bangladesh Development Co. PLC', 100, 0, 0, 1, NULL, '2024-11-23 08:38:14', '2024-12-21 04:32:11'),
+(35, 'Shukran Food PLC', NULL, 'https://www.shukranfoods.com.bd', 'company-1732351292.png', 'Shukran Food PLC', 100, 0, 0, 1, NULL, '2024-11-23 08:41:32', '2024-12-21 04:35:38'),
 (36, 'New Metal (BD) Ltd.', NULL, NULL, 'company-1732603309.png', 'New Metal (BD) Ltd.', 100, 1, 1, 1, NULL, '2024-11-25 11:49:28', '2024-11-26 06:41:49'),
 (37, 'Meghna Paper Mills Ltd.', NULL, NULL, 'company-1732598883.png', 'Meghna Paper Mills Ltd.', 100, 1, 1, 1, NULL, '2024-11-25 11:50:11', '2024-11-26 05:28:03'),
 (38, 'National Paper Mills Limited', NULL, NULL, 'company-1732597288.png', 'National Paper Mills Limited', 100, 1, 1, 1, NULL, '2024-11-25 11:50:46', '2024-11-26 05:01:28'),
@@ -705,7 +705,7 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `company_id`, `title`, `description`, `image`, `alt`, `srln`, `status`, `created_by_id`, `updated_by_id`, `created_at`, `updated_at`) VALUES
-(1, '0', 'Magura Group PLC', NULL, 'slider-1730695454.jpg', 'Empowering Unity', 0, 1, 1, 1, '2024-11-04 04:44:14', '2024-12-02 06:46:34'),
+(1, '0', 'Magura Group PLC', NULL, 'slider-1730695454.jpg', 'Empowering Unity', 2, 1, 1, 1, '2024-11-04 04:44:14', '2024-12-23 09:52:17'),
 (2, '0', NULL, NULL, 'slider-1730695484.jpg', 'Innovation thrives in collaboration. When we unite our talents, we create a brighter future.', 2, 0, 1, 1, '2024-11-04 04:44:44', '2024-12-02 04:51:17'),
 (3, '0', NULL, NULL, 'slider-1730695517.jpg', 'Success is not just a destination it\'s a journey we embark on together, supporting and uplifting each other every step of the way.', 3, 0, 1, 1, '2024-11-04 04:45:17', '2024-11-18 05:12:14'),
 (4, '0', NULL, NULL, 'slider-1730695554.jpg', NULL, 4, 0, 1, 1, '2024-11-04 04:45:54', '2024-11-18 05:12:09'),
@@ -723,11 +723,11 @@ INSERT INTO `sliders` (`id`, `company_id`, `title`, `description`, `image`, `alt
 (17, '0', 'Kores Composite Textile Mills Ltd.', NULL, 'slider-1733041959.jpg', NULL, 5, 1, 1, 1, '2024-12-01 08:32:39', '2024-12-02 07:14:12'),
 (18, '0', NULL, NULL, 'slider-1733041973.jpg', NULL, 5, 0, 1, 1, '2024-12-01 08:32:53', '2024-12-02 04:52:38'),
 (19, '0', NULL, NULL, 'slider-1733114810.jpg', NULL, 7, 1, 1, NULL, '2024-12-02 04:46:50', '2024-12-02 04:46:50'),
-(20, '0', NULL, NULL, 'slider-1733114821.JPG', NULL, 7, 1, 1, NULL, '2024-12-02 04:47:01', '2024-12-02 04:47:01'),
+(20, '0', NULL, NULL, 'slider-1733114821.JPG', NULL, 7, 0, 1, 1, '2024-12-02 04:47:01', '2024-12-23 09:52:30'),
 (21, '0', NULL, NULL, 'slider-1733114833.JPG', NULL, 7, 0, 1, 1, '2024-12-02 04:47:13', '2024-12-02 07:04:41'),
-(22, '0', NULL, NULL, 'slider-1733114853.JPG', NULL, 7, 1, 1, NULL, '2024-12-02 04:47:33', '2024-12-02 04:47:33'),
-(23, '0', 'Corporate Office', NULL, 'slider-1733114959.jpg', NULL, 7, 1, 1, 1, '2024-12-02 04:49:19', '2024-12-02 07:05:44'),
-(24, '0', 'South Town Masque', NULL, 'slider-1733115329.png', NULL, 0, 1, 1, 1, '2024-12-02 04:55:29', '2024-12-02 07:03:05');
+(22, '0', 'South Town', NULL, 'slider-1733114853.JPG', NULL, 3, 1, 1, 1, '2024-12-02 04:47:33', '2024-12-23 09:54:42'),
+(23, '0', 'Corporate Office', NULL, 'slider-1733114959.jpg', NULL, 0, 1, 1, 1, '2024-12-02 04:49:19', '2024-12-23 09:46:04'),
+(24, '0', 'South Town Masque', NULL, 'slider-1733115329.png', NULL, 1, 1, 1, 1, '2024-12-02 04:55:29', '2024-12-23 09:52:12');
 
 -- --------------------------------------------------------
 

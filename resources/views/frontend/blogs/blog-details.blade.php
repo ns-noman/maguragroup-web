@@ -50,7 +50,7 @@
 								<span><i class="fas fa-user"></i> {{ $data['blog']['admin']['name'] }}</span>
 							</div>
 							<h2>{{ $data['blog']['title'] }}</h2>
-							<p>{{ $data['blog']['description'] }}</p>
+							<p>{!! $data['blog']['description'] !!}</p>
 						</div>
 					</div>
 				</div>
