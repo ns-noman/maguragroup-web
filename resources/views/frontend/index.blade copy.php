@@ -1,68 +1,131 @@
 @extends('layouts.frontend.master')
 @section('content')
-<style>
-    /* Default styles for desktop */
+	<style>
+		/* Default styles for desktop */
 		.section-bg .carousel-inner .carousel-caption {
-			/* background-color: #080808; */
+			/* background-color: rgba(255, 255, 255, 0.57);
+			padding-left: 20px;
+			padding-right: 20px;
+			width: 48%;
+			left: 11%; */
 			position: absolute;
+			/* top: 41%; 
+			transform: translateY(-50%);
+			z-index: 99; */
 			text-align: center;
 			display: flex;
-			justify-content: center;
-			align-items: center;
-			right: 50px;
-			left: auto;
-			transform: none;
+			justify-content: end;
+			align-items: end;
+		}
+
+		.section-bg .carousel-inner .carousel-caption h1 {
+			color: #2E3190;
+			display: inline-block;
+			/* font-size: 30px; */
+			/* margin-bottom: 7px; */
+			text-transform: uppercase;
+			/* font-weight: 500; */
+			text-shadow: 4px 4px 4px #fff;
+		}
+
+		/* Tablet view (768px and above) */
+		/* @media (max-width: 991px) and (min-width: 768px) {
+			.section-bg .carousel-inner .carousel-caption {
+				width: 60%;
+				left: 10%;
+				top: 50%;
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+
+			.section-bg .carousel-inner .carousel-caption h1 {
+				font-size: 45px;
+			}
+		} */
+
+		/* Mobile view (below 768px) */
+		/* @media (max-width: 767px) {
+			.section-bg .carousel-inner .carousel-caption {
+				width: 80%;
+				left: 10%;
+				top: 50%;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+
+			.section-bg .carousel-inner .carousel-caption h1 {
+				font-size: 14px;
+			}
+		} */
+
+		/* .section-bg .carousel-inner .carousel-caption {
+			background-color: rgba(255, 255, 255, 0.57);
+			padding-left: 20px;
+			padding-right: 20px;
+			width: 48%;
+			left: 11%;
+			position: absolute;
+			top: 41%;
+			transform: translateY(-50%);
+			z-index: 99;
+			text-align: center;
+        }
+		.section-bg .carousel-inner .carousel-caption h1 {
+			color: #2E3190;
+			display: inline-block;
+			font-size: 60px;
+			margin-bottom: 7px;
+			text-transform: uppercase;
+			font-weight: 500;
+        } */
+
+		.section-bg .carousel-inner .carousel-caption p{
+			font-size: 30px;
+			color: #d4dee4;
+		}
+		.section-bg .carousel-inner .carousel-caption {
+			left: 50%; 
+			transform: translate(-50%, 0);
 			bottom: 20px;
 			font-size: 1.5rem;
 			opacity: 0;
 			transition: opacity 0.5s ease, transform 0.5s ease;
 		}
-
-		.section-bg .carousel-inner .carousel-caption h1 {
-			color: #2E3190;
-			text-transform: uppercase;
-			text-shadow: 4px 4px 4px #fff;
-		}
-
-		.section-bg .carousel-inner .carousel-caption p {
-			font-size: 30px;
-			color: #d4dee4;
-		}
-
+	
 		.section-bg .carousel-inner .carousel-caption.show {
 			opacity: 1;
-			transform: translate(0, 0);
+			transform: translate(-50%, 0);
 		}
-
+	
 		.section-bg .carousel-inner .carousel-item {
 			position: relative;
 		}
-
+	
 		.section-bg .carousel-inner .carousel-item img {
 			width: 100%;
 			height: auto;
 		}
 	</style>
-
+	
 	<section class="section-bg">
 		<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-pause="hover">
 			<div class="carousel-indicators">
-				@foreach($data['sliders'] as $key => $slider)
-					<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ $key }}" class="{{ $key == 0 ? 'active' : '' }}" aria-current="{{ $key == 0 ? 'true' : '' }}" aria-label="{{ $slider['title'] }}"></button>
-				@endforeach
+                @foreach($data['sliders'] as $key => $slider)
+				    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ $key }}" class="{{ $key == 0 ? 'active' : '' }}" aria-current="{{ $key == 0 ? 'true' : '' }}" aria-label="{{ $slider['title'] }}"></button>
+                @endforeach
 			</div>
 			<div class="carousel-inner">
-				@foreach($data['sliders'] as $key => $slider)
-					<div class="carousel-item {{ $key == 0 ? 'active' : '' }}" data-bs-interval="3000">
-						<img src="{{ asset('public/uploads/sliders/'.$slider['image']) }}" class="d-block" alt="...">
-						@if($slider['title'] || $slider['description'])
-							<div class="carousel-caption text-end">
+                @foreach($data['sliders'] as $key => $slider)
+                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }}" data-bs-interval="3000">
+                        <img src="{{ asset('public/uploads/sliders/'.$slider['image']) }}" class="d-block" alt="...">
+                        @if($slider['title'] || $slider['description'])
+							<div class="carousel-caption d-flex justify-content-right align-items-right">
 								<h1>{{ $slider['title'] }}</h1>
 								<p>{{ $slider['description'] }}</p>
 							</div>
 						@endif
-					</div>
-				@endforeach
+                    </div>
+                @endforeach
 			</div>
 			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
 				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -74,7 +137,6 @@
 			</button>
 		</div>
 	</section>
-
 	<!-- Animation Trigger Script -->
 	<script>
 		const carousel = document.getElementById('carouselExampleCaptions');

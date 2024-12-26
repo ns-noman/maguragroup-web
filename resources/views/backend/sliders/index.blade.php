@@ -19,6 +19,7 @@
                                     <thead>
                                         <tr>
                                             <th>SN</th>
+                                            <th>Order No</th>
                                             <th>Company Title</th>
                                             <th>Slider Title</th>
                                             <th>Description</th>
@@ -55,6 +56,7 @@
                                 return row.company_title ? row.company_title : 'Default Company';
                             }
                         },
+                        { data: 'srln', name: 'sliders.srln'},
                         { data: 'title', name: 'sliders.title'},
                         { data: 'description', name: 'sliders.description'},
                         { 

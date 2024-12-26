@@ -87,7 +87,8 @@ class SliderController extends Controller
                     'sliders.srln'
                 ]
             );
-            if(!$request->has('order')) $query = $query->orderBy('sliders.id','desc');
+            $query->orderBy('sliders.status','desc');
+            if(!$request->has('order')) $query = $query->orderBy('sliders.srln');
         return DataTables::of($query)->make(true);
     }
 
