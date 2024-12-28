@@ -68,3 +68,12 @@
         </section>
     </div>
 @endsection
+@section('script')
+<script>
+    $('#description').summernote({
+        placeholder: 'Description',
+        tabsize: 2,
+        height: 120
+    });
+</script>
+@endsection

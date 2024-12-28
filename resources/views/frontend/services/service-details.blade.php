@@ -1,6 +1,5 @@
 @extends('layouts.frontend.master')
 @section('content')
-	{{-- @include('layouts.frontend.breadcrumb') --}}
 	<section class="section-padding services-details section-bg">
 		<div class="container">
 			<div class="row">
@@ -13,7 +12,7 @@
 							@if($service['title'])
 							<h2 class="sc_title">{{ $service['title'] }}</h2>
 							@endif
-							<p>{{ $service['description'] }}</p>
+							<p>{!! $service['description'] !!}</p>
 						</div>
 						@if($service['image'])
 							<div class="col-lg-6 mb-30">
@@ -33,7 +32,7 @@
 							@if($service['title'])
 							<h2 class="sc_title">{{ $service['title'] }}</h2>
 							@endif
-							<p>{{ $service['description'] }}</p>
+							<p>{!! $service['description'] !!}</p>
 						</div>
 					@endif
 				@endforeach

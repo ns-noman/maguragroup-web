@@ -44,61 +44,79 @@
 		}
 	</style>
 
-	<section class="section-bg">
-		<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-pause="hover">
-			<div class="carousel-indicators">
-				@foreach($data['sliders'] as $key => $slider)
-					<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ $key }}" class="{{ $key == 0 ? 'active' : '' }}" aria-current="{{ $key == 0 ? 'true' : '' }}" aria-label="{{ $slider['title'] }}"></button>
-				@endforeach
-			</div>
-			<div class="carousel-inner">
-				@foreach($data['sliders'] as $key => $slider)
-					<div class="carousel-item {{ $key == 0 ? 'active' : '' }}" data-bs-interval="3000">
-						<img src="{{ asset('public/uploads/sliders/'.$slider['image']) }}" class="d-block" alt="...">
-						@if($slider['title'] || $slider['description'])
-							<div class="carousel-caption text-end">
-								<h1>{{ $slider['title'] }}</h1>
-								<p>{{ $slider['description'] }}</p>
-							</div>
-						@endif
-					</div>
-				@endforeach
-			</div>
-			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
-			</button>
-			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
-			</button>
+<section class="section-bg">
+	<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
+		<div class="carousel-indicators">
+			@foreach($data['sliders'] as $key => $slider)
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ $key }}" class="{{ $key == 0 ? 'active' : '' }}" aria-current="{{ $key == 0 ? 'true' : '' }}" aria-label="{{ $slider['title'] }}"></button>
+			@endforeach
 		</div>
-	</section>
+		<div class="carousel-inner">
+			@foreach($data['sliders'] as $key => $slider)
+				<div class="carousel-item {{ $key == 0 ? 'active' : '' }}" data-bs-interval="3000">
+					<img src="{{ asset('public/uploads/sliders/'.$slider['image']) }}" class="toggleCarousel d-block" alt="...">
+					@if($slider['title'] || $slider['description'])
+						<div class="carousel-caption text-end">
+							<h1>{{ $slider['title'] }}</h1>
+							<p>{{ $slider['description'] }}</p>
+						</div>
+					@endif
+				</div>
+			@endforeach
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+</section>
 
-	<!-- Animation Trigger Script -->
-	<script>
-		const carousel = document.getElementById('carouselExampleCaptions');
+<!-- Animation Trigger Script -->
+<script>
+	const carousel = document.getElementById('carouselExampleCaptions');
 
-		carousel.addEventListener('slide.bs.carousel', function (event) {
-			const captions = carousel.querySelectorAll('.carousel-caption');
-			captions.forEach(caption => {
-				caption.classList.remove('show'); // Remove the show class from all captions
-			});
+	// Manage carousel captions animations
+	carousel.addEventListener('slide.bs.carousel', function () {
+		const captions = carousel.querySelectorAll('.carousel-caption');
+		captions.forEach(caption => {
+			caption.classList.remove('show');
 		});
-	
-		carousel.addEventListener('slid.bs.carousel', function (event) {
-			const activeCaption = event.relatedTarget.querySelector('.carousel-caption');
-			if (activeCaption) {
-				activeCaption.classList.add('show'); // Add the show class to the active caption
-			}
-		});
-	
-		// Initialize the first caption to be visible
-		const initialCaption = carousel.querySelector('.carousel-item.active .carousel-caption');
-		if (initialCaption) {
-			initialCaption.classList.add('show');
+	});
+
+	carousel.addEventListener('slid.bs.carousel', function (event) {
+		const activeCaption = event.relatedTarget.querySelector('.carousel-caption');
+		if (activeCaption) {
+			activeCaption.classList.add('show');
 		}
-	</script>
+	});
+
+	// Initialize the first caption to be visible
+	const initialCaption = carousel.querySelector('.carousel-item.active .carousel-caption');
+	if (initialCaption) {
+		initialCaption.classList.add('show');
+	}
+
+	// Stop/Start carousel functionality
+	const toggleButton = document.getElementsByClassName('toggleCarousel');
+	let isPaused = false;
+	
+	[...toggleButton].forEach(element=>{
+		element.addEventListener('click', function () {
+			if (isPaused) {
+				bootstrap.Carousel.getInstance(carousel).cycle();
+			} else {
+				bootstrap.Carousel.getInstance(carousel).pause();
+			}
+			isPaused = !isPaused;
+		});
+	});
+
+</script>
+
 	<!-- End Hero Area -->
 
 
