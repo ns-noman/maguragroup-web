@@ -4,22 +4,14 @@
 $default = ['title'=>'Default'];
 $content = $data['breadcrumb'] ?? $default;
 @endphp	
-<section class="breadcrumb-area" style=" padding: 30px;background-image:url({{ asset("public/frontend-assets/img/company-organogram.png") }});">
+{{-- <section class="breadcrumb-area" style=" padding: 30px;background-image:url({{ asset("public/frontend-assets/img/company-organogram.png") }});">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12" style="padding: 90px 0px 90px 0px">
-				{{-- <div class="breadcrumb-content">
-					<h2>{{ $content['title'] }}</h2>
-					<ul>
-						<li><a href="{{ route('home.index') }}">Home</a></li>
-						<li><i class="fas fa-angle-double-right"></i></li>
-						<li>{{ $content['title'] }}</li>
-					</ul>
-				</div> --}}
 			</div>
 		</div>
 	</div>
-</section>
+</section> --}}
 	<style>
 		#organogram ul li {
 			width: 100%;
@@ -32,15 +24,20 @@ $content = $data['breadcrumb'] ?? $default;
 			margin-left: 5px;
 		}
 	 </style>
-	<section class="about-area section-padding">
+	<section class="about-area section-padding section-bg">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-lg-12 text-center">
+					<h4 class="sc_subtitle"><span>Company Organogram</span></h4>
+				</div>
+			</div>
+			<div class="row d-flex justify-content-center">
+				<div class="col-lg-8">
 					<div class="about-img">
 						<img src="{{ asset("public/frontend-assets/img/bdg-organogram.jpg") }}" alt="img" class="border border-secondary border-5">
 					</div>
 				</div>
-				<div class="col-lg-6 align-self-center">
+				{{-- <div class="col-lg-6 align-self-center">
 					<div class="about-content" id="organogram">
 						<h4 class="sc_subtitle"><span>Company Organogram</span></h4>
 						<h2 class="sc_title">Company Organogram.</h2>
@@ -78,7 +75,7 @@ $content = $data['breadcrumb'] ?? $default;
 												
 						</p>
 					</div>
-				</div>
+				</div> --}}
 			</div>
 		</div>
 	</section>
