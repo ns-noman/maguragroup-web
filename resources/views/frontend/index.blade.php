@@ -1,48 +1,119 @@
 @extends('layouts.frontend.master')
 @section('content')
 <style>
-    /* Default styles for desktop */
-		.section-bg .carousel-inner .carousel-caption {
-			/* background-color: #080808; */
-			position: absolute;
-			text-align: center;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			right: 50px;
-			left: auto;
-			transform: none;
-			bottom: 20px;
-			font-size: 1.5rem;
-			opacity: 0;
-			transition: opacity 0.5s ease, transform 0.5s ease;
-		}
+	
+	.section-bg .carousel-inner .carousel-caption {
+		position: absolute;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		right: 50px;
+		left: auto;
+		transform: none;
+		bottom: 20px;
+		font-size: 1.5rem;
+		opacity: 0;
+		transition: opacity 0.5s ease, transform 0.5s ease;
+	}
+	.section-bg .carousel-inner .carousel-caption.show {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
 
-		.section-bg .carousel-inner .carousel-caption h1 {
-			color: #2E3190;
-			text-transform: uppercase;
-			text-shadow: 4px 4px 4px #fff;
-		}
+	.section-bg .carousel-inner .carousel-item {
+		position: relative;
+	}
 
-		.section-bg .carousel-inner .carousel-caption p {
-			font-size: 30px;
-			color: #d4dee4;
-		}
+	.section-bg .carousel-inner .carousel-item img {
+		width: 100%;
+		height: auto;
+	}
+    /* Responsive styles for carousel caption h1 and p */
+	.section-bg .carousel-inner .carousel-caption h1 {
+		color: #2E3190;
+		text-transform: uppercase;
+		text-shadow: 4px 4px 4px #fff;
+	}
 
-		.section-bg .carousel-inner .carousel-caption.show {
-			opacity: 1;
-			transform: translate(0, 0);
-		}
+    /* Medium screens (tablets) */
+    @media (max-width: 992px) {
+        .section-bg .carousel-inner .carousel-caption h1 {
+            font-size: 2.5rem; /* Slightly smaller heading */
+        }
 
-		.section-bg .carousel-inner .carousel-item {
-			position: relative;
-		}
+        .section-bg .carousel-inner .carousel-caption p {
+            font-size: 1.2rem; /* Slightly smaller text */
+        }
+    }
 
-		.section-bg .carousel-inner .carousel-item img {
-			width: 100%;
-			height: auto;
-		}
-	</style>
+    /* Small screens (mobile) */
+    @media (max-width: 768px) {
+        .section-bg .carousel-inner .carousel-caption h1 {
+            font-size: 2rem; /* Smaller heading for mobile */
+        }
+
+        .section-bg .carousel-inner .carousel-caption p {
+            font-size: 1rem; /* Smaller text for mobile */
+        }
+    }
+
+    /* Extra small screens (very small mobile devices) */
+    @media (max-width: 576px) {
+        .section-bg .carousel-inner .carousel-caption h1 {
+            font-size: 1.5rem; /* Further reduced heading size */
+        }
+
+        .section-bg .carousel-inner .carousel-caption p {
+            font-size: 0.9rem; /* Further reduced text size */
+        }
+    }
+</style>
+
+
+
+
+{{-- <style>
+	.section-bg .carousel-inner .carousel-caption {
+		position: absolute;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		right: 50px;
+		left: auto;
+		transform: none;
+		bottom: 20px;
+		font-size: 1.5rem;
+		opacity: 0;
+		transition: opacity 0.5s ease, transform 0.5s ease;
+	}
+
+	.section-bg .carousel-inner .carousel-caption h1 {
+		color: #2E3190;
+		text-transform: uppercase;
+		text-shadow: 4px 4px 4px #fff;
+	}
+
+	.section-bg .carousel-inner .carousel-caption p {
+		font-size: 30px;
+		color: #2E3190;
+	}
+
+	.section-bg .carousel-inner .carousel-caption.show {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+
+	.section-bg .carousel-inner .carousel-item {
+		position: relative;
+	}
+
+	.section-bg .carousel-inner .carousel-item img {
+		width: 100%;
+		height: auto;
+	}
+</style> --}}
 
 <section class="section-bg">
 	<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">

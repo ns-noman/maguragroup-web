@@ -179,7 +179,7 @@ img{
 .top-social span {
 	display: inline-block;
 	margin: 0px 8px;
-	font-size: 16px;
+	font-size: 22px;
 }
 .top-social span a{
 	color: #fff;
@@ -239,7 +239,7 @@ img{
 	color: #1e1b39;
 	text-transform: capitalize;
 	font-weight: 500;
-	padding: 30px 20px;
+	padding: 30px 15px;
 	-webkit-transition: all .4s ease-in-out;
 	transition: all .4s ease-in-out;
 	font-size: 16px;

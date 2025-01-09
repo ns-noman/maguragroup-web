@@ -12,20 +12,17 @@
 <!-- Header Top -->
 <header class="header">
     <!-- Header Top -->
-    <div class="header-top">
+    {{-- <div class="header-top">
         <div class="container">
             <div class="row">
-                <!-- Top Left -->
                 <div class="col-lg-8">
                     <div class="hl_top-left">
                         <a href="tel:+8801847091084" style="text-decoration: none; color: inherit; cursor: pointer;"><span><i class="bi bi-telephone"></i> {{ $basicInfo->phone }}</span></a>&nbsp;						
                         <a style="text-decoration: none; color: inherit; cursor: pointer;" href="mailto:{{ $basicInfo->email }}"><span><i class="bi bi-envelope"></i> {{ $basicInfo->email }}</span></a>&nbsp;
-                        <!--<a href="https://maps.app.goo.gl/Vu4ChwYeLNPrywR48" target="_blank" style="text-decoration: none; color: inherit; cursor: pointer;"><span><i class="bi bi-geo-alt"></i> {{ $basicInfo->location }}</span></a>-->
+                        <a href="https://maps.app.goo.gl/Vu4ChwYeLNPrywR48" target="_blank" style="text-decoration: none; color: inherit; cursor: pointer;"><span><i class="bi bi-geo-alt"></i> {{ $basicInfo->location }}</span></a>
                     </div>
                 </div>
-                <!-- Top Right -->
                 <div class="col-lg-4">
-                    <!-- Social -->
                     <div class="top-social">
                         <span><a target="_blank" href="{{ $basicInfo->facebook_link }}"><i class="fab fa-facebook-f"></i></a></span>
                         <span><a target="_blank" href="{{ $basicInfo->twitter_link }}"><i class="fab fa-twitter"></i></a></span>
@@ -35,7 +32,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Header Bottom -->
     {{-- box-shadow: 0 10px 20px rgba(0, 0, 0, 1); --}}
     <div class="header-bottom sticky-header" style="background-color: #ffffff;">
@@ -75,6 +72,12 @@
                                     </form>
                                 </div>
                             </div>
+                        </div>
+                        <div class="top-social">
+                            <span><a target="_blank" href="{{ $basicInfo->facebook_link }}"><i class="fab fa-facebook-f" style="color: #0D8AF0"></i></a></span>
+                            <span><a target="_blank" href="{{ $basicInfo->twitter_link }}"><i class="fab fa-twitter" style="color: #1D9BF0"></i></a></span>
+                            <span><a target="_blank" href="{{ $basicInfo->linkedin_link }}"><i class="fab fa-linkedin" style="color: #0274B3"></i></a></span>
+                            <span><a target="_blank" href="{{ $basicInfo->youtube_link }}"><i class="fab fa-youtube" style="color: #FF0000"></i></a></span>
                         </div>
                     </div>
                     <!-- Menu -->
