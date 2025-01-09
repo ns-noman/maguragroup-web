@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 28, 2024 at 05:17 AM
+-- Generation Time: Jan 09, 2025 at 09:59 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -184,7 +184,7 @@ INSERT INTO `companies` (`id`, `title`, `description`, `site_link`, `logo`, `alt
 (2, 'Magura Group PLC', NULL, 'https://www.maguragroup.com.bd', 'company-1731321367.png', 'Est a officiis culpa', 1, 1, 1, 1, NULL, '2024-11-03 08:51:39', '2024-12-21 04:33:02'),
 (3, 'Kores Composite Textile Mills Ltd.', NULL, NULL, 'company-1731321619.png', 'Kores Composite Textile Miles Limited', 19, 1, 1, 1, NULL, '2024-11-03 08:51:53', '2024-12-02 05:47:56'),
 (4, 'Magura Paper Mills Ltd. Unit-2 Limited', NULL, NULL, 'company-1731321503.png', 'Magura Paper Mills Limited', 2, 1, 1, 1, NULL, '2024-11-07 08:39:23', '2024-12-02 05:08:04'),
-(5, 'Kores (Bangladesh) PLC', NULL, 'https://www.koresbd.com', 'company-1732598526.png', 'Kores ( Bangladesh ) Limited', 18, 1, 1, 1, NULL, '2024-11-07 08:39:47', '2024-12-21 04:34:59'),
+(5, 'Kores Bangladesh PLC', NULL, 'https://www.koresbd.com', 'company-1732598526.png', 'Kores Bangladesh Limited', 18, 1, 1, 1, NULL, '2024-11-07 08:39:47', '2025-01-09 09:11:52'),
 (6, 'Mineral Paper Industries Ltd.', NULL, NULL, 'company-1731321334.png', 'Mineral Paper Industries Limited', 20, 1, 1, 1, NULL, '2024-11-07 08:40:01', '2024-12-02 05:39:35'),
 (7, 'World of Textiles Ltd.', NULL, NULL, 'company-1731321672.png', 'World of Textiles Limited', 21, 1, 1, 1, NULL, '2024-11-07 11:04:17', '2024-12-02 05:40:23'),
 (8, 'Paper Processing & Packaging Limited', NULL, 'https://www.pppl.com.bd', 'company-1731321728.png', 'Paper Processing & Packaging Limited', 11, 1, 1, 1, NULL, '2024-11-07 11:05:47', '2024-12-21 04:33:43'),
