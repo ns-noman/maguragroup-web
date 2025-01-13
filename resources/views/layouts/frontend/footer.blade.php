@@ -10,7 +10,7 @@
                         <!-- Logo -->
                         <div class="flogo mb-20 py-2">
                             <a href="{{ route('home.index') }}">
-                                <img src="{{ asset('public/uploads/basic-info/'.$basicInfo->logo) }}" alt="Magura Group">
+                                <img width="105px" height="60px" src="{{ asset('public/uploads/basic-info/'.$basicInfo->logo) }}" alt="Magura Group">
                             </a>
                     </div>
                         <p><i class="fas fa-map-marker-alt"></i>{{ $basicInfo->address }}</p>
@@ -29,7 +29,7 @@
                         </p>
                         <div class="f-social">
                             <span><a target="_blank" href="{{ $basicInfo->facebook_link }}"><i class="fab fa-facebook-f" style="color: #0D8AF0"></i></a></span>
-                            <span><a target="_blank" href="{{ $basicInfo->twitter_link }}"><i class="fab fa-twitter" style="color: #1D9BF0"></i></a></span>
+                            <span><a target="_blank" href="{{ $basicInfo->twitter_link }}"><i class="fa-brands fa-x-twitter" style="color: #1E3050"></i></a></span>
                             <span><a target="_blank" href="{{ $basicInfo->linkedin_link }}"><i class="fab fa-linkedin" style="color: #0274B3"></i></a></span>
                             <span><a target="_blank" href="{{ $basicInfo->youtube_link }}"><i class="fab fa-youtube" style="color: #FF0000"></i></a></span>
                         </div>
