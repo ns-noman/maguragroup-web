@@ -41,7 +41,7 @@ $content = $data['breadcrumb'] ?? $default;
 					}
 				</style>
 
-				@foreach ($data['blogs'] as $blog)
+				@foreach ($data['blogs']->items() as $blog)
 					<div class="col-lg-4 col-md-6 mb-30">
 						<div class="blog-item">
 							<div class="thumnail">
@@ -75,51 +75,40 @@ $content = $data['breadcrumb'] ?? $default;
 			<div class="row mt-10 mb-30 text-center section-bg">
 				<div class="col-lg-12">
 					<div class="bhouse_pagination">
+						@php
+							$currentPage = $data['blogs']->currentPage();
+							$lastPage = $data['blogs']->lastPage();
+						@endphp
 						<ul>
-							{{-- 
-								<li><a href="#"><i class="fas fa-angle-left"></i></a></li>
-								<li><a href="#">1</a></li>
-								<li><span>2</span></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#"><i class="fas fa-angle-right"></i></a></li>
-							 --}}
-
-							{{-- <li class="page-item {{ $data['current_page'] == 1 ? 'disabled' : '' }}">
-                                <a class="page-link" href="{{ $data['current_page'] == 1 ? 'javascript:void(0)' : route('home.index', [$data['date'], 1]) }}">শুরু</a>
-                            </li>
-                            <li class="page-item {{ $data['current_page'] > 1 ? '' : 'disabled' }}">
-                                <a class="page-link" href="{{ $data['current_page'] > 1 ? route('home.index', [$data['date'], $data['current_page'] - 1]) : 'javascript:void(0)' }}">
-                                    {{ 'আগের' }}
-                                </a>
-                            </li>
-                            @php
-                                $start = max(1, $data['current_page'] - 2);
-                                $end = min($data['total_pages'], $data['current_page'] + 2);
+							<li class="{{ $currentPage == 1 ? '' : 'disabled' }}">
+								<a href="{{ $currentPage > 1 ? $data['blogs']->url($currentPage - 1) : 'javascript:void(0)' }}"><i class="fas fa-angle-left"></i></a>
+							</li>
+							<li class="{{ $currentPage == 1 ? 'disabled' : '' }}">
+								<a href="{{ $currentPage == 1 ? 'javascript:void(0)' : $data['blogs']->url(1) }}">First</a>
+							</li>
+							@php
+                                $start = max(1, $currentPage - 2);
+                                $end = min($lastPage, $currentPage + 2);
                             @endphp
-            
-                            {!! $start > 1 ? '<li class="page-item disabled"><span class="page-link">...</span></li>' : '' !!}
-            
-                            @for($i = $start; $i <= $end; $i++)
-                                <li class="page-item {{ $i == $data['current_page'] ? 'active' : '' }}">
-                                    <a class="page-link" href="{{ $i != $data['current_page'] ? route('home.index', [$data['date'], $i]) : 'javascript:void(0)' }}">
-                                        {{ $i }}
-                                    </a>
+							{!! $start > 1 ? '<li><a href="javascript:void(0)">...</a></li>' : '' !!}
+							@for($i = $start; $i <= $end; $i++)
+                                <li>
+									@if($i == $currentPage)
+										<span>{{ $i }}</span>
+									@else
+										<a href="{{ $i != $currentPage ? $data['blogs']->url($i) : 'javascript:void(0)' }}">
+											{{ $i }}
+										</a>
+									@endif
                                 </li>
                             @endfor
-            
-                            {!! $end < $data['total_pages'] ? '<li class="page-item disabled"><span class="page-link">...</span></li>' : '' !!}
-            
-                            <li class="page-item {{ $data['current_page'] < $data['total_pages'] ? '' : 'disabled' }}">
-                                <a class="page-link" href="{{ $data['current_page'] < $data['total_pages'] ? route('home.index', [$data['date'], $data['current_page'] + 1]) : 'javascript:void(0)' }}">
-                                    {{ 'পরের' }}
-                                </a>
-                            </li>
-            
-                            <li class="page-item {{ $data['current_page'] == $data['total_pages'] ? 'disabled' : '' }}">
-                                <a class="page-link" href="{{ $data['current_page'] == $data['total_pages'] ? 'javascript:void(0)' : route('home.index', [$data['date'], $data['total_pages']]) }}">শেষ</a>
-                            </li> --}}
-
+							{!! $end < $lastPage ? '<li><a href="javascript:void(0)">...</a></li>' : '' !!}
+							<li class="{{ $currentPage == $lastPage ? 'disabled' : '' }}">
+								<a href="{{ $currentPage == $lastPage ? 'javascript:void(0)' : $data['blogs']->url($lastPage) }}">Last</a>
+							</li>
+							<li class="{{ $currentPage == $lastPage ? '' : 'disabled' }}">
+								<a href="{{ $currentPage < $lastPage ? $data['blogs']->url($currentPage + 1) : 'javascript:void(0)' }}"><i class="fas fa-angle-right"></i></a>
+							</li>
 						</ul>
 					</div>
 				</div>

@@ -57,8 +57,10 @@ class HomeController extends Controller
             $view = 'chairman-speech';
         } else if($menuID == 10){
             if($id){
+
                 $view = 'blogs.blog-details';
                 $data['blog'] = Blog::with(['admin', 'blogcategory'])->find($id)->toArray();
+
                 $data['recentBlogs'] = Blog::with(['admin', 'blogcategory'])
                                         ->where(['status' => 1])
                                         ->whereNotIn('id', [$id])
@@ -70,7 +72,10 @@ class HomeController extends Controller
                                         ->toArray();
             }else{ 
                 $view = 'blogs.blogs';
-                $data['blogs'] = Blog::with(['admin', 'blogcategory'])->where(['status' => 1])->select(['id', 'title', 'short_description', 'image', 'alt', 'cat_id', 'created_by_id', 'pn','created_at'])->orderBy('pn')->get()->toArray();
+                $data['blogs'] = Blog::with(['admin', 'blogcategory'])->where(['status' => 1])
+                                    ->select(['id', 'title', 'short_description', 'image', 'alt', 'cat_id', 'created_by_id', 'pn','created_at'])
+                                    ->orderBy('pn')
+                                    ->paginate(3);
             }
         } else if($menuID == 11){
             $view = 'contacts';            
