@@ -33,7 +33,7 @@ class HomeController extends Controller
             $data['basicInfo'] = BasicInfo::select(['video_embed_3'])->first()->toArray();
         } else if($menuID == 5){
             $view = 'mvv';
-        } else if($menuID == 6){
+        } else if($menuID == 6){ 
             if($id){
                 $view = 'services.service-details';
                 $data['services'] = Service::where(['service_type_id'=>$id, 'status'=> 1])->select(['id','title','description','image','alt'])->orderBy('pn')->get()->toArray();
@@ -75,7 +75,7 @@ class HomeController extends Controller
                 $data['blogs'] = Blog::with(['admin', 'blogcategory'])->where(['status' => 1])
                                     ->select(['id', 'title', 'short_description', 'image', 'alt', 'cat_id', 'created_by_id', 'pn','created_at'])
                                     ->orderBy('pn')
-                                    ->paginate(3);
+                                    ->paginate(6);
             }
         } else if($menuID == 11){
             $view = 'contacts';            
