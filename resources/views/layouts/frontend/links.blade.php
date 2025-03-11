@@ -15,3 +15,6 @@
 <link rel="stylesheet" href="{{ asset('public/frontend-assets') }}/css/responsive.css">
 <link rel="stylesheet" href="{{ asset('public/frontend-assets') }}/plugins/toastr/toastr.min.css">
 {{-- <link rel="stylesheet" href="{{ asset('public/frontend-assets') }}/css/fontawesome.all.min.css"> --}}
+
+
+<link rel="stylesheet" href="{{ asset('public/frontend-assets') }}/css/slider-style.css">

@@ -1,0 +1,219 @@
+:root {
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.slider-section {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.slider-container {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    position: relative;
+    padding-top: 100vh;
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+}
+
+.slider-one,
+.slider-two,
+.slider-three,
+.slider-four {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: slider-one 12s linear infinite;
+
+    .slider-one-image,
+    .slider-two-image,
+    .slider-three-image,
+    .slider-four-image {
+        width: 110%;
+        height: 100%;
+        background-image: url("https://demo.maguragroup.com.bd/public/uploads/sliders/slider-1733114959.jpg");
+
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        animation: zoom-out 3s linear infinite;
+
+        .slider-text {
+            position: absolute;
+            top: 40%;
+            left: 5%;
+            color: #2E3091;
+            width: 600px;
+            text-transform: capitalize;
+            animation: text-up 12s linear infinite;
+            transform: translateY(100px);
+            animation-delay: 0s;
+
+            h1{
+                font-size: 2.5rem !important;
+                margin-bottom: 20px !important;
+                color: #2E3091 !important;
+                font-family: var(--font-family);
+            }
+            
+            p {
+                font-size: 18px;
+                line-height: 28px;
+                color: #2E3091 !important;
+                font-family: var(--font-family);
+            }
+        }
+    }
+}
+
+.slider-two {
+    animation: slider-two 12s linear infinite;
+
+    .slider-two-image {
+        background-image: url("https://demo.maguragroup.com.bd/public/uploads/sliders/slider-1733115329.png");
+
+        .slider-text {
+            animation-delay: 3s;
+        }
+    }
+}
+
+.slider-three {
+    animation: slider-three 12s linear infinite;
+
+    .slider-three-image {
+        background-image: url("https://demo.maguragroup.com.bd/public/uploads/sliders/slider-1733040783.png");
+
+        .slider-text {
+            animation-delay: 6s;
+        }
+    }
+}
+
+.slider-four {
+    animation: slider-four 12s linear infinite;
+
+    .slider-four-image {
+        background-image: url("https://demo.maguragroup.com.bd/public/uploads/sliders/slider-1730695454.jpg");
+
+        .slider-text {
+            animation-delay: 9s;
+        }
+    }
+}
+
+@keyframes text-up {
+    10% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes zoom-out {
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes slider-one {
+    0% {
+        visibility: visible;
+    }
+
+    25% {
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: hidden;
+    }
+
+    75% {
+        visibility: hidden;
+    }
+
+    100% {
+        visibility: visible;
+    }
+}
+
+@keyframes slider-two {
+    0% {
+        visibility: hidden;
+    }
+
+    25% {
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: visible;
+    }
+
+    75% {
+        visibility: hidden;
+    }
+
+    100% {
+        visibility: hidden;
+    }
+}
+
+@keyframes slider-three {
+    0% {
+        visibility: hidden;
+    }
+
+    25% {
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: hidden;
+    }
+
+    75% {
+        visibility: visible;
+    }
+
+    100% {
+        visibility: hidden;
+    }
+}
+
+@keyframes slider-four {
+    0% {
+        visibility: hidden;
+    }
+
+    25% {
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: hidden;
+    }
+
+    75% {
+        visibility: hidden;
+    }
+
+    100% {
+        visibility: visible;
+    }
+}
+
+/*
+  https://images.pexels.com/photos/248747/pexels-photo-248747.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
+  
+  
+  https://images.unsplash.com/photo-1587726763541-d8e58f4fb2fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80
+  
+  https://images.pexels.com/photos/1413412/pexels-photo-1413412.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
+  
+  https://images.pexels.com/photos/2240766/pexels-photo-2240766.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500 */
